@@ -1,0 +1,6 @@
+#!/bin/sh
+case "$1" in
+"C-c") while read file; do xclip -selection clipboard -target image/png "$file"; done ;;
+"C-d") while read file; do mv -v "$file" /home/nils/.local/share/Trash/files/; done ;;
+"C-r") while read file; do rm "$file"; done ;;
+esac

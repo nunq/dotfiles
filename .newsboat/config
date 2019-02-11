@@ -1,0 +1,39 @@
+# --- core ---
+max-items 64
+reload-threads 32
+auto-reload yes
+browser "xdg-open '%u' > /dev/null 2>&1 &"
+# --- style ---
+articlelist-format "﹣%t"
+##articlelist-format " %f %D %?T?|%-17T| ?%t"
+articlelist-title-format "%N - %T (%u articles unread)"
+feedlist-title-format "%N %V - Your feeds"
+feedlist-format " %2U | %t"
+##feedlist-format " %n | %2U | %t"
+article-sort-order date-asc
+##show-keymap-hint no
+# --- colors ---
+color listnormal        white default dim
+color listnormal_unread white default bold
+color listfocus         white default bold reverse 
+color listfocus_unread  white default bold reverse
+color info              cyan default bold
+color background        default default
+color article           default default
+# --- behaviour ---
+prepopulate-query-feeds yes
+toggleitemread-jumps-to-next-unread yes
+openbrowser-and-mark-jumps-to-next-unread yes
+reset-unread-on-update "http://blog.fefe.de/rss.xml?html"
+save-path ~/.newsboat/keep/
+# --- rm unnecessary keybindings ---
+unbind-key E
+unbind-key ^E
+unbind-key f
+unbind-key F
+unbind-key ^F
+unbind-key D
+unbind-key ^D
+unbind-key v
+unbind-key t
+unbind-key ^T

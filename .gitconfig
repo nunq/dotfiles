@@ -1,0 +1,8 @@
+[credential]
+	helper = cache
+[credential "https://github.com"]
+	username = hyphenc
+	helper = cache
+[user]
+	name = hyphenc
+	email = 46054695+hyphenc@users.noreply.github.com
