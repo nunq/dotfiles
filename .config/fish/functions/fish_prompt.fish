@@ -1,1 +1,1 @@
-/home/nils/.local/share/omf/themes/shellder/fish_prompt.fish
+/home/nils/.local/share/omf/themes/agnoster/fish_prompt.fish
