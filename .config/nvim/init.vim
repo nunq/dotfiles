@@ -1,26 +1,30 @@
 colorscheme monokai
 nnoremap <esc> :noh<return><esc>
+
 set autoread
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 set encoding=utf-8
+set expandtab
 set hlsearch
 set ignorecase
 set incsearch
+set laststatus=2
 set magic
 set mouse=a
 set nocompatible
 set number
+set scrolloff=5
+set shiftwidth=2
 set shiftwidth=4
 set showmatch
 set smartcase
 set smartindent
 set smarttab
-set softtabstop=4
-set undolevels=100
-set laststatus=2
-set scrolloff=5
+set softtabstop=2
+set tabstop=2
 set ttyfast
+set undolevels=100
 syntax on
 
 set statusline=\ %F
