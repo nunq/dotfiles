@@ -25,5 +25,6 @@
     "editor.fontLigatures": true,
     "editor.scrollBeyondLastColumn": 0,
     "workbench.colorTheme": "Monokai Dimmed",
-    "workbench.sideBar.location": "left"
+    "workbench.sideBar.location": "left",
+    "latex-workshop.message.update.show": false
 }
