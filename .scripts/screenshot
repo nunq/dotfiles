@@ -1,0 +1,2 @@
+#!/bin/sh
+scrot -s -z ~/Downloads/scrot-$(date "+%d.%m_%T").png

@@ -1,0 +1,12 @@
+#!/bin/sh
+    
+case "$(echo -e "lock\nbtconn\nbtdisc\nwifictrl\nsuspend\nreboot\nshutdown" | dmenu -i -p \
+    "sysmenu:" -l 7 )" in
+        lock) /usr/bin/pactl set-sink-mute 0 toggle; exec slock;;
+        btconn) $HOME/.scripts/btmenu;;
+        btdisc) $HOME/.scripts/btmenu -d;;
+        wifictrl) exec kitty connmanctl;;
+        suspend) exec systemctl suspend;;
+        reboot) exec systemctl reboot;;
+        shutdown) exec systemctl poweroff;;
+esac

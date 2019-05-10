@@ -1,0 +1,4 @@
+#!/bin/sh
+passmenu > /dev/null 2>&1
+sleep 30
+clipdel -d "$(xclip -o)"

@@ -16,7 +16,6 @@ set nocompatible
 set number
 set scrolloff=5
 set shiftwidth=2
-set shiftwidth=4
 set showmatch
 set smartcase
 set smartindent
