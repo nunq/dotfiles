@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# source: https://github.com/cdown/btmenu/blob/master/btmenu
 _bluetoothctl() {
     LC_ALL=C timeout 30 bluetoothctl
 }

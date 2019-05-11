@@ -1,0 +1,16 @@
+#!/bin/sh
+    
+case "$(echo -e "calc\nnew bg\npass\n\nbtconn\nbtdisc\nwifictrl\nmount\numount\n\nlock\nsuspend\nreboot\nshutdown" | dmenu -i -p "utility menu:" -l 14  )" in
+        calc) kitty bc -l ;;
+        new\ bg) $HOME/.scripts/fehbg ;;
+        pass) $HOME/.scripts/passnosave ;;
+        btconn) $HOME/.scripts/btmenu ;;
+        btdisc) $HOME/.scripts/btmenu -d ;;
+        wifictrl) kitty $HOME/.scripts/guidedconnman ;;
+        mount) $HOME/.scripts/dmenumount ;;
+        umount) $HOME/.scripts/dmenuumount ;;
+        lock) /usr/bin/pactl set-sink-mute 0 toggle; exec slock ;;
+        suspend) exec systemctl suspend ;;
+        reboot) exec systemctl reboot ;;
+        shutdown) exec systemctl poweroff ;;
+esac

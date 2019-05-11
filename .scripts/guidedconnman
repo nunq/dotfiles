@@ -1,0 +1,3 @@
+#!/bin/sh
+echo -e "\nquick how-two:\n\nscan wifi\nservices\n [open wifi ? -> connect]\nagent on\nconnect _COMPLETE ID_\n\nelse see: https://wiki.archlinux.org/index.php/ConnMan\n"
+connmanctl
