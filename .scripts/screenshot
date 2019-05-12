@@ -1,2 +1,4 @@
 #!/bin/sh
-scrot -s -z ~/Downloads/scrot-$(date "+%d.%m_%T").png
+DISPLAY=:0
+notify-send -u critical -t 2500 "select area (ESC to quit)"
+sleep 0.2 ; scrot -s -z ~/Downloads/scrot-$(date "+%d.%m_%T").png

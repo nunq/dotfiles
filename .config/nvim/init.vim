@@ -1,5 +1,6 @@
 colorscheme monokai
 nnoremap <esc> :noh<return><esc>
+nnoremap <M-d> <Nop>
 
 set autoread
 set backspace=indent,eol,start
