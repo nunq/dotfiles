@@ -47,6 +47,13 @@ dunst & # ; systemctl --user import-environment DISPLAY &
 syncthing -no-browser -home="/home/nils/.config/syncthing" &
 #dbus-daemon --session &
 
+#fonts
+xset +fp /usr/share/fonts/TTF/ &
+xset +fp /usr/share/fonts/misc &
+xset +fp /usr/share/fonts/OTF &
+xset +fp /home/nils/Documents/misc/grey/fonts/ &
+xset rehash &
+
 #enable touch to click & natural scrolling
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")
 TTCPROP=$(xinput list-props $TOUCHPADID | grep -oP "Tapping Enabled \(.*?\)" | sed "s/.*Tapping Enabled (//" | sed "s/)//")
