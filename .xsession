@@ -26,7 +26,7 @@ while true; do
       BATT="charged"
     fi
 
-    if [ $(pacmd list-sinks | grep -A 11 "index: $SINK" | grep "muted:.*") == "Mute: 1" ]; then
+    if [ "$(pacmd list-sinks | grep -A 11 "index: $SINK" | grep 'muted:.*' | sed 's/\s//gi')" == "muted:yes" ]; then
       VOLLABEL=""
       VOLUME="muted"
     fi
@@ -46,13 +46,6 @@ start-pulseaudio-x11 &
 dunst & # ; systemctl --user import-environment DISPLAY &
 syncthing -no-browser -home="/home/nils/.config/syncthing" &
 #dbus-daemon --session &
-
-#fonts
-xset +fp /usr/share/fonts/TTF/ &
-xset +fp /usr/share/fonts/misc &
-xset +fp /usr/share/fonts/OTF &
-xset +fp /home/nils/Documents/misc/grey/fonts/ &
-xset rehash &
 
 #enable touch to click & natural scrolling
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")

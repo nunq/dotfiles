@@ -84,7 +84,7 @@ execute_mode() {
     done
 
     ret="$?"
-    notify "Failed to $mode $preposition $name" 1
+    notify "Failed to $mode $preposition $name, maybe try 'sudo rfkill unblock bluetooth'" 1
     return "$ret"
 }
 
