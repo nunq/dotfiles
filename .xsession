@@ -8,7 +8,7 @@ while true; do
     #vars
     BATT=$(acpi -b | sed 's/.*[charging|unknown], \([0-9]*\)%.*/\1/gi')
     BRIGHTNESS=$(xbacklight -get| sed "s/\..*//")
-    NETSIGNAL=$( bc -lq <<< $(cat /proc/net/wireless | grep -oP  "..\." | sed '1q' | sed 's/\.//')/70*100 | sed 's/\..*//')
+#    NETSIGNAL=$( bc -lq <<< $(cat /proc/net/wireless | grep -oP  "..\." | sed '1q' | sed 's/\.//')/70*100 | sed 's/\..*//')
     SINK=$(pacmd list-sinks|awk '/\* index:/{ print $3 }')
     STATUS=$(acpi -b | sed 's/.*: \([a-zA-Z]*\),.*/\1/gi')
     VOLUME=$(pacmd list-sinks | grep -A 7 "index: $SINK" | grep -oP "\/.*?[0-9]{1,3}%.*?\/" | sed 1q | grep -oP "[0-9]{1,3}%")
@@ -34,14 +34,15 @@ while true; do
     if [ "$BRIGHTNESS" -lt "1" ]; then
       xbacklight -set "1.1"
     fi
-
-    xsetroot -name " NET:$NETSIGNAL% $VOLLABEL$VOLUME BRI:$BRIGHTNESS $BATLABEL$BATT$BATIND $(date '+%T %d.%m.%y') "
+# NET:$NETSIGNAL%
+    xsetroot -name " $VOLLABEL$VOLUME BRI:$BRIGHTNESS $BATLABEL$BATT$BATIND $(date '+%T %d.%m.%y') "
+    sleep 0.5
 done &
 
 #autostart
 clipmenud &
 redshift -l "54.12:9.45" &
-xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'locking screen in 15s'" &
+xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" &
 start-pulseaudio-x11 &
 dunst & # ; systemctl --user import-environment DISPLAY &
 syncthing -no-browser -home="/home/nils/.config/syncthing" &

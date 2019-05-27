@@ -1,4 +1,5 @@
 #!/bin/sh
+pkill -9 clipmenud
 passmenu > /dev/null 2>&1
-sleep 30
-clipdel -d "$(xclip -o)"
+sleep 15
+clipmenud &

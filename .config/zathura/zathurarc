@@ -1,1 +1,4 @@
 set selection-clipboard clipboard
+map r reload
+map R rotate
+map p print

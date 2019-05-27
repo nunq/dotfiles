@@ -1,4 +1,4 @@
 #!/bin/sh
 DISPLAY=:0
-notify-send -u critical -t 2500 "select area (ESC to quit)"
-sleep 0.2 ; scrot -s -z ~/Downloads/scrot-$(date "+%d.%m_%T").png
+notify-send -u critical -t 1500 "select area (ESC to quit)"
+maim -s ~/Downloads/maim-$(date "+%d.%m_%T").png
