@@ -1,5 +1,8 @@
 #!/bin/bash
-# source: https://github.com/LukeSmithxyz/voidrice/blob/archi3/.local/bin/tools/compiler
+# adapted from: https://github.com/LukeSmithxyz/voidrice/blob/archi3/.local/bin/tools/compiler
+
+
+case "$1" in
 
 file=$(readlink -f "$1")
 dir=$(dirname "$file")
@@ -7,6 +10,11 @@ base="${file%.*}"
 
 cd "$dir" || exit
 
+compile)
 case "$file" in
 	*\.tex) command="pdflatex"; $( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"; $command --output-directory="$dir" "$base" ;;
+esac
+
+latexenv) kitty -c zathura $base.pdf & ;;
+
 esac
