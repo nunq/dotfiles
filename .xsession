@@ -41,6 +41,7 @@ done &
 
 #autostart
 clipmenud &
+ssh-agent &
 redshift -l "54.12:9.45" &
 xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" &
 start-pulseaudio-x11 &

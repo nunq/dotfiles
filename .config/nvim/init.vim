@@ -1,7 +1,10 @@
 colorscheme monokai
 nnoremap <esc> :noh<return><esc>
 nnoremap <M-d> <Nop>
-nnoremap <M-y> :w! \| !~/.scripts/compile <c-r>%<CR>
+nnoremap <M-s> <Nop>
+
+command C !~/.scripts/compile %
+command Lenv !zathura (dirname %)/(basename % | sed 's/\.tex//').pdf & 
 
 set autoread
 set backspace=indent,eol,start
