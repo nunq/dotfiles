@@ -3,7 +3,7 @@
 ping -q -c 1 1.1.1.1 > /dev/null || exit
 export DISPLAY=:0.0
 
-notify() { notify-send "mutt-wizard" "📬 $2 new mail(s) [$1]" ;}
+notify() { notify-send "neomutt" "$2 new mail(s) [$1]" ;}
 
 mbsync -a
 
