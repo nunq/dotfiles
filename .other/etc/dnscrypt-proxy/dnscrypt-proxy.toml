@@ -27,13 +27,13 @@
 ## The proxy will automatically pick the fastest, working servers from the list.
 ## Remove the leading # first to enable this; lines starting with # are ignored.
 
-server_names = ['cloudflare','opennic-ethservices', 'opennic-ethservices2']
+#server_names = ['cloudflare']
 
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
 ## Note: When using systemd socket activation, choose an empty set (i.e. [] ).
 
-listen_addresses = ['127.0.0.1:40']
+listen_addresses = ['127.0.0.1:5335', '[::1]:5335']
 
 
 ## Maximum number of simultaneous client connections to accept
@@ -185,13 +185,13 @@ cert_refresh_delay = 240
 ## People in China may need to use 114.114.114.114:53 here.
 ## Other popular options include 8.8.8.8 and 1.1.1.1.
 
-fallback_resolver = '9.9.9.9:53'
+fallback_resolver = '1.1.1.1:53'
 
 
 ## Never let dnscrypt-proxy try to use the system DNS settings;
 ## unconditionally use the fallback resolver.
 
-ignore_system_dns = false
+ignore_system_dns = true
 
 
 ## Maximum time (in seconds) to wait for network connectivity before

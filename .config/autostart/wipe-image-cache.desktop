@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=wipe image cache
-Comment=Run wipe image cache
-Exec=wipe -rf .cache/thumbnails/;wipe -rf .cache/sxiv/
-Terminal=false
-Type=Application

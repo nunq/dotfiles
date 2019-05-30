@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name='syncthing'
-Comment='Run syncthing'
-Exec=nohup syncthing -no-browser -home='/home/nils/.config/syncthing'
-Terminal=false
-Type=Application

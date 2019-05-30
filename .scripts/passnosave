@@ -1,5 +1,4 @@
 #!/bin/sh
-pkill -9 clipmenud
 passmenu > /dev/null 2>&1
 sleep 15
-clipmenud &
+clipdel -d $(tail -n 1 /run/user/1000/clipmenu.5.nils/line_cache_clipboard | sed 's/[0-9]* //')
