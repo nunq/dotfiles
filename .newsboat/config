@@ -1,6 +1,6 @@
 # --- core ---
-max-items 64
-reload-threads 32
+max-items 32
+reload-threads 16
 auto-reload yes
 browser "xdg-open '%u' > /dev/null 2>&1 &"
 # --- style ---

@@ -1,21 +1,18 @@
 #!/bin/bash
-
 #keymap
 setxkbmap de
-
 #top bar
-while true; do
+while sleep 1; do
     #vars
-    BATT=$(acpi -b | sed 's/.*[charging|unknown], \([0-9]*\)%.*/\1/gi')
+    BAT=$(cat /sys/class/power_supply/BAT1/capacity)
     BRIGHTNESS=$(xbacklight -get| sed "s/\..*//")
-#    NETSIGNAL=$( bc -lq <<< $(cat /proc/net/wireless | grep -oP  "..\." | sed '1q' | sed 's/\.//')/70*100 | sed 's/\..*//')
+    NETSIGNAL=$(cat /proc/net/wireless | grep -oP  "..\." | head -n 1 | sed 's/\.//' | sed 's/\..*//')
     SINK=$(pacmd list-sinks|awk '/\* index:/{ print $3 }')
-    STATUS=$(acpi -b | sed 's/.*: \([a-zA-Z]*\),.*/\1/gi')
-    VOLUME=$(pacmd list-sinks | grep -A 7 "index: $SINK" | grep -oP "\/.*?[0-9]{1,3}%.*?\/" | sed 1q | grep -oP "[0-9]{1,3}%")
-    BATLABEL="BAT:"
+    STATUS=$(cat /sys/class/power_supply/BAT1/status)
+    VOLUME=$(pacmd list-sinks | grep -A 7 "index: $SINK" | grep -oP "\/.*?[0-9]{1,3}%.*?\/" | head -n 1 | grep -oP "[0-9]{1,3}%")
     BATIND=""
-    VOLLABEL="VOL:"
-
+    BATLABEL="bat:"
+    VOLLABEL="vol:"
     if [ "$STATUS" == "Charging" ]; then
       BATIND="*"
     elif [ "$STATUS" == "Discharging" ]; then
@@ -23,22 +20,17 @@ while true; do
     elif [ "$STATUS" == "Full" ]; then
       BATLABEL=""
       BATIND=""
-      BATT="charged"
+      BAT="charged"
     fi
-
     if [ "$(pacmd list-sinks | grep -A 11 "index: $SINK" | grep 'muted:.*' | sed 's/\s//gi')" == "muted:yes" ]; then
       VOLLABEL=""
       VOLUME="muted"
     fi
-
     if [ "$BRIGHTNESS" -lt "1" ]; then
       xbacklight -set "1.1"
     fi
-# NET:$NETSIGNAL%
-    xsetroot -name " $VOLLABEL$VOLUME BRI:$BRIGHTNESS $BATLABEL$BATT$BATIND $(date '+%T %d.%m.%y') "
-    sleep 0.5
+    xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME bri:$BRIGHTNESS% $BATLABEL$BAT$BATIND | $(date '+%T %d.%m.%y') "
 done &
-
 #autostart
 clipmenud &
 ssh-agent &
@@ -48,16 +40,13 @@ start-pulseaudio-x11 &
 dunst & # ; systemctl --user import-environment DISPLAY &
 syncthing -no-browser -home="/home/nils/.config/syncthing" &
 #dbus-daemon --session &
-
 #enable touch to click & natural scrolling
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")
 TTCPROP=$(xinput list-props $TOUCHPADID | grep -oP "Tapping Enabled \(.*?\)" | sed "s/.*Tapping Enabled (//" | sed "s/)//")
 NSCPROP=$(xinput list-props 9 | grep -oP "Natural Scrolling Enabled \(.*?\)" | sed "s/.*Natural Scrolling Enabled (//" | sed "s/)//")
 xinput set-prop "$TOUCHPADID" "$TTCPROP" 1 &
 xinput set-prop "$TOUCHPADID" "$NSCPROP" 1 &
-
 #wallpaper
 ~/.scripts/fehbg &
-
 #finally
 exec ~/.scripts/startdwm
