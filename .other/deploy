@@ -1,5 +1,5 @@
 #!/bin/sh
 sudo cp -r ./etc/ /
-cp ./firefox/chrome/* $HOME/.mozilla/firefox/*.default/chrome
-cp ./firefox/prefs.js $HOME/.mozilla/firefox/*.default/prefs.js
+cp ./firefox/chrome/* $HOME/.mozilla/firefox/*.default-release/chrome
+cp ./firefox/prefs.js $HOME/.mozilla/firefox/*.default-release/prefs.js
 echo "do: sudo su && echo 'Nameservers=127.0.0.1' >> /var/lib/connman/wifi_*/settings"

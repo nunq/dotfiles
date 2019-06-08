@@ -17,7 +17,8 @@ while sleep 1; do
       BATIND="*"
     elif [ "$STATUS" == "Discharging" ]; then
       BATIND="%"
-    elif [ "$STATUS" == "Full" ]; then
+    fi
+    if [ "$BAT" == "100" ]; then
       BATLABEL=""
       BATIND=""
       BAT="charged"

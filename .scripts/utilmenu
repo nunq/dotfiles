@@ -1,6 +1,6 @@
 #!/bin/sh
     
-case "$(echo -e "calculator\nnew wallpaper\npass\nscreenshot\n\nbt connect\nbt disconnect\nwifictrl\nmount\numount\n\nlock screen\nsuspend\nreboot\nshutdown" | dmenu -i -p "utility menu:" -l 15  )" in
+case "$(echo -e "calculator\nnew wallpaper\npass\nscreenshot\n\nbt connect\nbt disconnect\nwifictrl\n\nlock screen\nsuspend\nreboot\nshutdown" | dmenu -i -p "utility menu:" -l 13  )" in
         calculator) kitty bc -l ;;
         new\ wallpaper) $HOME/.scripts/fehbg ;;
         pass) $HOME/.scripts/passnosave ;;
@@ -8,8 +8,6 @@ case "$(echo -e "calculator\nnew wallpaper\npass\nscreenshot\n\nbt connect\nbt d
         bt\ connect) $HOME/.scripts/btmenu ;;
         bt\ disconnect) $HOME/.scripts/btmenu -d ;;
         wifictrl) kitty $HOME/.scripts/guidedconnman ;;
-        mount) $HOME/.scripts/dmenumount ;;
-        umount) $HOME/.scripts/dmenuumount ;;
         lock\ screen) /usr/bin/pactl set-sink-mute 0 toggle; exec slock ;;
         suspend) exec systemctl suspend ;;
         reboot) exec systemctl reboot ;;

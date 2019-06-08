@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/.mozilla/firefox/*.default/
+cd ~/.mozilla/firefox/*.default-release/
 cp chrome/* ~/.other/firefox/chrome/
 cp prefs.js ~/.other/firefox
 cd /etc
