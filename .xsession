@@ -2,7 +2,7 @@
 #keymap
 setxkbmap de
 #top bar
-while sleep 1; do
+while :; do
     #vars
     BAT=$(cat /sys/class/power_supply/BAT1/capacity)
     BRIGHTNESS=$(xbacklight -get| sed "s/\..*//")
@@ -30,7 +30,9 @@ while sleep 1; do
     if [ "$BRIGHTNESS" -lt "1" ]; then
       xbacklight -set "1.1"
     fi
-    xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME bri:$BRIGHTNESS% $BATLABEL$BAT$BATIND | $(date '+%T %d.%m.%y') "
+    #xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME bri:$BRIGHTNESS% $BATLABEL$BAT$BATIND | $(date '+%H:%M %d.%m.%y') "
+    xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND | $(date '+%H:%M %d.%m.%y') "
+    sleep 10
 done &
 #autostart
 clipmenud &
