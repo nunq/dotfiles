@@ -32,7 +32,7 @@ while :; do
     fi
     #xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME bri:$BRIGHTNESS% $BATLABEL$BAT$BATIND | $(date '+%H:%M %d.%m.%y') "
     xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND | $(date '+%H:%M %d.%m.%y') "
-    sleep 10
+    sleep 5
 done &
 #autostart
 clipmenud &

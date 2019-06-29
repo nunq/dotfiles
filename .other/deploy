@@ -1,5 +1,6 @@
 #!/bin/sh
 sudo cp -r ./etc/ /
+sudo echo "nameserver 127.0.0.1" > /etc/resolv.conf
+sudo chattr +i /etc/resolv.conf
 cp ./firefox/chrome/* $HOME/.mozilla/firefox/*.default-release/chrome
 cp ./firefox/prefs.js $HOME/.mozilla/firefox/*.default-release/prefs.js
-echo "do: sudo su && echo 'Nameservers=127.0.0.1' >> /var/lib/connman/wifi_*/settings"
