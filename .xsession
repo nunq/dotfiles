@@ -41,7 +41,6 @@ redshift -l "54.12:9.45" &
 xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" &
 start-pulseaudio-x11 &
 dunst & # ; systemctl --user import-environment DISPLAY &
-syncthing -no-browser -home="/home/nils/.config/syncthing" &
 #dbus-daemon --session &
 #enable touch to click & natural scrolling
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")

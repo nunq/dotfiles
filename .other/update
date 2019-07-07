@@ -10,7 +10,7 @@ sudo cp sysctl.d/* ~/.other/etc/sysctl.d/
 sudo cp udev/rules.d/* ~/.other/etc/udev/rules.d/
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME add -u
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME add ~/.other
-git --git-dir=/home/nils/.cfg/ --work-tree=/home/nils reset ~/.scripts/backup.sh
-git --git-dir=/home/nils/.cfg/ --work-tree=/home/nils reset ~/.scripts/musicupdate.sh
+git --git-dir=/home/nils/.cfg/ --work-tree=/home/nils reset ~/.scripts/backup
+git --git-dir=/home/nils/.cfg/ --work-tree=/home/nils reset ~/.scripts/musicupdate
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME status
 echo -e "\n\e[31m>>> don't commit sensitive data! check the added files. <<<\n\e[0m"
