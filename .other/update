@@ -8,6 +8,7 @@ sudo cp dnscrypt-proxy/dnscrypt-proxy.toml ~/.other/etc/dnscrypt-proxy/
 sudo cp modprobe.d/* ~/.other/etc/modprobe.d/
 sudo cp sysctl.d/* ~/.other/etc/sysctl.d/
 sudo cp udev/rules.d/* ~/.other/etc/udev/rules.d/
+sudo cp security/pam_env.conf ~/.other/etc/security/
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME add -u
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME add ~/.other
 git --git-dir=/home/nils/.cfg/ --work-tree=/home/nils reset ~/.scripts/backup
