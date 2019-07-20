@@ -9,8 +9,10 @@ command Lenv !zathura (dirname %)/(basename % | sed 's/\.tex//').pdf &
 set autoread
 set backspace=indent,eol,start
 set clipboard=unnamedplus
+set cursorline
 set encoding=utf-8
 set expandtab
+set fileformat=unix
 set hlsearch
 set ignorecase
 set incsearch
@@ -27,6 +29,7 @@ set smartindent
 set smarttab
 set softtabstop=2
 set tabstop=2
+set title
 set ttyfast
 set undolevels=100
 syntax on
