@@ -12,7 +12,6 @@ set clipboard=unnamedplus
 set cursorline
 set encoding=utf-8
 set expandtab
-set fileformat=unix
 set hlsearch
 set ignorecase
 set incsearch
