@@ -39,3 +39,7 @@ unbind-key o
 unbind-key O
 bind-key o open-in-browser-and-mark-read
 bind-key O open-in-browser
+# --- nc news upstream ---
+include ~/.newsboat/ncnews
+urls-source "ocnews"
+ocnews-flag-star s
