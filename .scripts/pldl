@@ -36,7 +36,7 @@ prepDownload() {
 
 downloadAndEncode() {
     youtube-dl --quiet --write-thumbnail --skip-download -cwi -o /tmp/musicdl-cover "$1"
-    youtube-dl --download-archive "$DIR"/downloaded.txt --quiet -f bestaudio "$1" -cwi -o /tmp/musicdl-aud.mp3.pre
+    youtube-dl --quiet -f bestaudio "$1" -cwi -o /tmp/musicdl-aud.mp3.pre
     ffmpeg -hide_banner -loglevel panic -i /tmp/musicdl-aud.mp3.pre /tmp/musicdl-aud.mp3 -preset ultrafast
     ffmpeg -hide_banner -loglevel panic -i /tmp/musicdl-aud.mp3 -i /tmp/musicdl-cover.jpg -c copy -map 0 -map 1 -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (Front)" -metadata title="$3" -metadata artist="$2" "$DIR"/"$2 - $3".mp3 -preset ultrafast
     echo -e "\nDownloaded to '"$DIR"/"$2 - $3".mp3'\n"

@@ -5,6 +5,7 @@ nnoremap <M-s> <Nop>
 
 command C !~/.scripts/compile %
 command Lenv !zathura (dirname %)/(basename % | sed 's/\.tex//').pdf & 
+command W :write
 
 set autoread
 set backspace=indent,eol,start

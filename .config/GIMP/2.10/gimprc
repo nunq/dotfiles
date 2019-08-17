@@ -43,7 +43,7 @@
     (show-grid no)
     (show-sample-points yes)
     (snap-to-guides yes)
-    (snap-to-grid yes)
+    (snap-to-grid no)
     (snap-to-canvas yes)
     (snap-to-path no)
     (padding-mode default)
