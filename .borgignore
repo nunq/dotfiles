@@ -1,5 +1,7 @@
 *.borgign
 *.vdi
+*.iso
+*.qcow*
 *.vmdk
 /home/nils/.AndroidStudio3.4
 /home/nils/.cache
@@ -20,6 +22,7 @@
 /home/nils/.local/share/fish/generated_completions
 /home/nils/.local/share/tracker
 /home/nils/.minecraft
+/home/nils/.mozilla
 /home/nils/.nv
 /home/nils/.python_history
 /home/nils/.surf

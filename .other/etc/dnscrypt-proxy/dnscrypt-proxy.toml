@@ -27,8 +27,7 @@
 ## The proxy will automatically pick the fastest, working servers from the list.
 ## Remove the leading # first to enable this; lines starting with # are ignored.
 
-#server_names = ['cloudflare', 'dnscrypt-de-blahdns-ipv4']
-
+server_names = ['cs-de', 'dnscrypt-de-blahdns-ipv4', 'dnscrypt-01.adsnomore.io']
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
 ## Note: When using systemd socket activation, choose an empty set (i.e. [] ).
@@ -73,7 +72,7 @@ require_dnssec = true
 require_nolog = true
 
 # Server must not enforce its own blacklist (for parental control, ads blocking...)
-require_nofilter = true
+#require_nofilter = true
 
 # Server names to avoid even if they match all criteria
 disabled_server_names = []
