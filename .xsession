@@ -22,6 +22,11 @@ while :; do
       BATLABEL=""
       BATIND=""
       BAT="charged"
+    elif [ "$BAT" -le "4" -a "$STATUS" == "Discharging" ]; then
+      BATLABEL=""
+      BATIND=""
+      BAT="charge!"
+      notify-send --urgency=critical -t 20000 "your laptop is about to die"
     fi
     if [ "$(pacmd list-sinks | grep -A 11 "index: $SINK" | grep 'muted:.*' | sed 's/\s//gi')" == "muted:yes" ]; then
       VOLLABEL=""
