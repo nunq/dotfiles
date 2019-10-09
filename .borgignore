@@ -1,6 +1,7 @@
 *.borgign
 *.vdi
 *.iso
+*.img
 *.qcow*
 *.vmdk
 /home/nils/.AndroidStudio3.4
@@ -27,6 +28,7 @@
 /home/nils/.python_history
 /home/nils/.surf
 /home/nils/.tor-browser
+/home/nils/.tlauncher
 /home/nils/Android
 /home/nils/AndroidStudioProjects
 /home/nils/Documents/backups/ncp

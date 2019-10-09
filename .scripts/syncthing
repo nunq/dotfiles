@@ -1,3 +1,0 @@
-#!/bin/bash
-syncthing -no-browser -home="/home/nils/.config/syncthing" > /dev/null 2>&1 &
-echo -e "\nstarted syncthing, kill with 'pkill syncthing'\n"
