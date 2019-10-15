@@ -4,14 +4,9 @@
 *.img
 *.qcow*
 *.vmdk
-/home/nils/.AndroidStudio3.4
-/home/nils/.cache
+/home/nils/.Android*
 /home/nils/.cache
 /home/nils/.cfg
-/home/nils/.config/Code - OSS
-/home/nils/.config/Riot
-/home/nils/.config/evolution
-/home/nils/.config/gsconnect
 /home/nils/.config/syncthing
 /home/nils/.cups
 /home/nils/.electron
@@ -24,15 +19,12 @@
 /home/nils/.local/share/tracker
 /home/nils/.minecraft
 /home/nils/.mozilla
-/home/nils/.nv
 /home/nils/.python_history
 /home/nils/.surf
 /home/nils/.tor-browser
 /home/nils/.tlauncher
-/home/nils/Android
-/home/nils/AndroidStudioProjects
+/home/nils/Android*
 /home/nils/Documents/backups/ncp
 /home/nils/Videos
 /home/nils/android-studio
-/home/nils/code/cloned-sources
 /home/nils/go

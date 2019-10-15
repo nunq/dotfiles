@@ -1,5 +1,5 @@
 # --- core ---
-max-items 32
+max-items 99
 reload-threads 16
 auto-reload yes
 browser "xdg-open '%u' > /dev/null 2>&1 &"
@@ -33,7 +33,7 @@ unbind-key ^F
 unbind-key D
 unbind-key ^D
 unbind-key v
-unbind-key t
+#unbind-key t
 unbind-key ^T
 unbind-key o
 unbind-key O
