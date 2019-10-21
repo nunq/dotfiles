@@ -25,38 +25,16 @@ toolbarbutton#alltabs-button { -moz-binding:url("userChrome.xml#js"); }
 }
 
 /*
- * Description: Hides the Tracking Protection icon.
- * https://github.com/Timvde/UserChrome-Tweaks/blob/master/navbar/autohide-tracking-protection.css
- * Contributor(s): Joachim Vandersmissen, Strappazzon
+ * Description: only show lock left of url
+ * source: me
  */
 
-#tracking-protection-icon-box {
-  visibility: collapse !important;
+#permissions-granted-icon, .sharing-icon {
+  display: none;
 }
 
-#identity-box:hover > #tracking-protection-icon-box {
-  visibility: visible !important;
-}
-
-/*
- * Automatically hides the info/Firefox icon on the location bar when a website doesn't
- * have any permissions.
- * https://github.com/Timvde/UserChrome-Tweaks/blob/master/navbar/autohide-info-icon.css
- * Contributor(s): Madis0
- */
-
-/* Hide info icon for sites that don't have permissions */
-#urlbar :not(.grantedPermissions) #identity-icon {
-        transition: 300ms !important; /* Animate icon hiding */
-	opacity: 0 !important; /* Make icons transparent */
-	-moz-margin-end: -1.1em !important; /* Hide icons by offsetting them */
-}
-
-/* Show info icon on navbar hover, except for new tab page search icon */
-#urlbar[pageproxystate="valid"]:hover #identity-icon {
-        transition: 300ms !important; /* Animate icon showing */
-	opacity: 1 !important; /* Make icons opaque */
-	-moz-margin-end: initial !important; /* Use initial margins to show icons */
+#identity-icon {
+  display: block !important;
 }
 
 /*
@@ -170,20 +148,9 @@ Remove borders everywhere, some code copied from edge style for firefox
 	box-shadow: none !important;
 }
 
-/* nav bar is semi opaque when unhovered */
-#nav-bar > * {
-  opacity:0.5;
-  transition: opacity 0.3s;
-}
-
 /* hide separator next to hamburger menu */
 #PanelUI-button {
   border-image-slice: 0 !important;
-}
-/* */
-
-#nav-bar:hover > * {
-  opacity:0.75 !important;
 }
 
 #urlbar {
