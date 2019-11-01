@@ -8,12 +8,13 @@ DIR="$HOME/Music/$3" #without slash at the end!
 
 setData() {
     vtitle=$(youtube-dl -e "$1")
-    artist=$(sed 's/ [-\—\–\‒\:\~\-].*//' <<< "$vtitle")
-    title=$(sed "s/$artist [-\—\–\‒\:\~\-]* //" <<< "$vtitle" | sed 's/ - .*$//' | sed 's/ [(\\[\||\\/\/\|\+\~\-\(0-9.{4})].*$//' | sed "s/^[\"\']//" | sed "s/[\"\']$//" | sed 's/\[a-zA-Z0-9].{3}//')
     if [[ ! $(grep -P " [-\—\–\‒\:\~\-].*" <<< "$vtitle") ]]; then
         echo "Couldn't auto-extract for '"$vtitle"', please provide the data yourself."
         read -rp "artist? : " artist
         read -rp "title?  : " title
+    else
+        artist=$(sed 's/ [-\—\–\‒\:\~\-].*//' <<< "$vtitle")
+        title=$(sed "s/$artist [-\—\–\‒\:\~\-]* //" <<< "$vtitle" | sed 's/ - .*$//' | sed 's/ [(\\[\||\\/\/\|\+\~\-\(0-9.{4})].*$//' | sed "s/^[\"\']//" | sed "s/[\"\']$//" | sed 's/\[a-zA-Z0-9].{3}//')
     fi
 }
 
