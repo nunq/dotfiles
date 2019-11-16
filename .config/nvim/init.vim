@@ -2,6 +2,7 @@ colorscheme monokai
 nnoremap <esc> :noh<return><esc>
 nnoremap <M-d> <Nop>
 nnoremap <M-s> <Nop>
+map qq <Nop>
 
 command C :write | !~/.scripts/compile %
 command Lenv !zathura (dirname %)/(basename % | sed 's/\.tex//').pdf & 
