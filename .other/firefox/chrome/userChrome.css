@@ -10,6 +10,53 @@
   border-bottom: none !important;
 }
 
+
+/* BEGIN: in url bar (left) */
+
+/* remove tracking protection icon in url bar (left) */
+#tracking-protection-icon-container {
+  display: none;
+}
+
+/* hide drm icon */
+#notification-popup-box {
+  display: none;
+}
+
+/*  hide the no autoplay allowed icon */
+#blocked-permissions-container {
+  display: none;
+}
+
+/* hide home icon */
+#home-button {
+  display: none;
+}
+
+/* END */
+
+
+/* tabview bg */
+.tabbrowser-tab .tab-background {
+	background-color: #1d1d1d !important;
+}
+
+
+/* from https://github.com/coekuss/quietfox#customizable-values */
+--tab-corner-rounding: 7px;
+--animation-speed: 0.4s;
+--button-corner-rounding: 20px;
+
+
+/* dark link previews (bottom left) */
+/* source: https://www.reddit.com/r/FirefoxCSS/comments/dtyw6x/how_do_i_make_this_link_preview_thingy_dark_its/ */
+#statuspanel-label {
+    background-color: black !important;
+    border: 1px none black !important;
+    border-top-style: solid !important;
+    color: white !important;
+}
+
 /* hide scrollbar */
 
 toolbarbutton#alltabs-button { -moz-binding:url("userChrome.xml#js"); }
@@ -291,3 +338,4 @@ toolbarspring {
 .tabbrowser-tab[fadein]:not([pinned]) {
   max-width: 300px !important;
 }
+
