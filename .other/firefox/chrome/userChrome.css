@@ -1,5 +1,15 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* topbar right: remove space between >> button and hamburger menu */
+#nav-bar-overflow-button {
+  margin-right: -10px !important;
+}
+
+/* set urlbar autocomplete highlight color to grey (was blue) */
+--autocomplete-popup-highlight-background: #2d2d2d;
+
+
+/* set fira code as main font */
 * {
   font-family: "Fira Code" !important;
 }
@@ -41,13 +51,6 @@
 	background-color: #1d1d1d !important;
 }
 
-
-/* from https://github.com/coekuss/quietfox#customizable-values */
---tab-corner-rounding: 7px;
---animation-speed: 0.4s;
---button-corner-rounding: 20px;
-
-
 /* dark link previews (bottom left) */
 /* source: https://www.reddit.com/r/FirefoxCSS/comments/dtyw6x/how_do_i_make_this_link_preview_thingy_dark_its/ */
 #statuspanel-label {
@@ -56,10 +59,6 @@
     border-top-style: solid !important;
     color: white !important;
 }
-
-/* hide scrollbar */
-
-toolbarbutton#alltabs-button { -moz-binding:url("userChrome.xml#js"); }
 
 /*
  * Hides the separator between address bar PageAction extensions and internal icons (Containers, Reader, etc.)
@@ -78,10 +77,6 @@ toolbarbutton#alltabs-button { -moz-binding:url("userChrome.xml#js"); }
 
 #permissions-granted-icon, .sharing-icon {
   display: none;
-}
-
-#identity-icon {
-  display: block !important;
 }
 
 /*

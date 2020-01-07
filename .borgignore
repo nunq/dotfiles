@@ -4,6 +4,8 @@
 *.img
 *.qcow*
 *.vmdk
+*.mkv
+*.mp4
 /home/nils/.Android*
 /home/nils/.cache
 /home/nils/.cfg
@@ -14,9 +16,12 @@
 /home/nils/.i2p
 /home/nils/.java
 /home/nils/.lesshst
+/home/nils/.local/bin
+/home/nils/.local/lib
 /home/nils/.local/share/Trash
 /home/nils/.local/share/fish/generated_completions
 /home/nils/.local/share/tracker
+/home/nils/.local/var
 /home/nils/.minecraft
 /home/nils/.mozilla
 /home/nils/.python_history

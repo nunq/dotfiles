@@ -5,6 +5,7 @@
 #why dont u youtube-dl --embed-thumbnail with atomicparsley? bc i dont want another package, and tbh i dont care about the time it takes, since it runs in the bg :)
 set -eo pipefail
 DIR="$HOME/Music/$3" #without slash at the end!
+rm /tmp/musicdl-* > /dev/null 2>&1 || true
 
 setData() {
     vtitle=$(youtube-dl -e "$1")
@@ -14,7 +15,7 @@ setData() {
         read -rp "title?  : " title
     else
         artist=$(sed 's/ [-\—\–\‒\:\~\-].*//' <<< "$vtitle")
-        title=$(sed "s/$artist [-\—\–\‒\:\~\-]* //" <<< "$vtitle" | sed 's/ - .*$//' | sed 's/ [(\\[\||\\/\/\|\+\~\-\(0-9.{4})].*$//' | sed "s/^[\"\']//" | sed "s/[\"\']$//" | sed 's/\[a-zA-Z0-9].{3}//')
+        title=$(sed "s/$artist [-\—\–\‒\:\~\-]* //" <<< "$vtitle" | sed 's/ - .*$//' | sed 's/ [(\\[\||\\/\/\|\+\~\-\(0-9.{4})].*$//' | sed "s/^[\"\']//" | sed "s/[\"\']$//" | sed 's/\[a-zA-Z0-9].{3}//' | sed 's/\///')
     fi
 }
 

@@ -35,14 +35,13 @@ while :; do
     if [ "$BRIGHTNESS" -lt "1" ]; then
       xbacklight -set "1.1"
     fi
-    #xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME bri:$BRIGHTNESS% $BATLABEL$BAT$BATIND | $(date '+%H:%M %d.%m.%y') "
     xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND | $(date '+%H:%M %d.%m.%y') "
     sleep 5
 done &
 #autostart
 clipmenud &
 ssh-agent &
-redshift -l "54.12:9.45" &
+redshift -l "$(curl -s https://ipapi.co | grep -oP '(?<=<td class="ipval" data-clipboard-text=").*?(?=")' | sed -n 7p | sed 's/, /:/')" || true &
 xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" &
 start-pulseaudio-x11 &
 dunst & # ; systemctl --user import-environment DISPLAY &
