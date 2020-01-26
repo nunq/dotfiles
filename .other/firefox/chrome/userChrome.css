@@ -1,13 +1,23 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* hide that atrocious default scrollbar */
+scrollbar {
+  scrollbar-width: thin !important;
+  scrollbar-color: #6b6b6b #1f1f1f !important;
+}
+
+/* set urlbar autocomplete highlight color to grey (was blue) */
+* {
+	--autocomplete-popup-highlight-background: #5555 !important;
+/* 'visit site' in suggestions: green -> white; etc */
+	--urlbar-popup-url-color: #eee;
+	--urlbar-popup-action-color: #eee;
+}
+
 /* topbar right: remove space between >> button and hamburger menu */
 #nav-bar-overflow-button {
   margin-right: -10px !important;
 }
-
-/* set urlbar autocomplete highlight color to grey (was blue) */
---autocomplete-popup-highlight-background: #2d2d2d;
-
 
 /* set fira code as main font */
 * {
