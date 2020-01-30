@@ -2,8 +2,8 @@
 
 /* hide that atrocious default scrollbar */
 scrollbar {
-  scrollbar-width: thin !important;
-  scrollbar-color: #6b6b6b #1f1f1f !important;
+  scrollbar-width: thin;
+  scrollbar-color: #6b6b6b #1f1f1f;
 }
 
 /* set urlbar autocomplete highlight color to grey (was blue) */
