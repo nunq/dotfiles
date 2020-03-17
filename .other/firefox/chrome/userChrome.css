@@ -1,5 +1,11 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* disable expanding pinned tabs on hover */
+tabbrowser-tabs .tabbrowser-tab:not([selected])[pinned], .tabbrowser-tab[fadein][pinned]:not([style*="max-width"]) {
+  min-width: 40px !important;
+  max-width: 40px !important;
+}
+
 /* hide that atrocious default scrollbar */
 scrollbar {
   scrollbar-width: thin;
@@ -26,7 +32,7 @@ scrollbar {
 
 
 /* remove black bar below url bar */
-#navigator-toolbox{
+#navigator-toolbox {
   border-bottom: none !important;
 }
 
