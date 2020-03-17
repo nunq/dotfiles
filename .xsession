@@ -35,7 +35,7 @@ while :; do
     if [ "$BRIGHTNESS" -lt "1" ]; then
       xbacklight -set "1.1"
     fi
-    xsetroot -name " net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND | $(date '+%H:%M %d.%m.%y') "
+    xsetroot -name " $(date +%a | tr '[A-Z]' '[a-z]')  $(cal | grep $(date +%d) | sed "s/$(date +%d)/[$(date +%d)]/")  $(date +%m/%Y) | $(date +%H:%M) | net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND "
     sleep 5
 done &
 #autostart
