@@ -22,7 +22,7 @@ set magic
 set mouse=a
 set nocompatible
 set number
-set scrolloff=5
+set scrolloff=10
 set shiftwidth=2
 set showmatch
 set smartcase
