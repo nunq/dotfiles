@@ -22,7 +22,7 @@ while :; do
       BATLABEL=""
       BATIND=""
       BAT="charged"
-    elif [ "$BAT" -le "6" -a "$STATUS" == "Discharging" ]; then
+    elif [ "$BAT" -le "9" -a "$STATUS" == "Discharging" ]; then
       BATLABEL=""
       BATIND=""
       BAT="charge!"
@@ -35,7 +35,7 @@ while :; do
     if [ "$BRIGHTNESS" -lt "1" ]; then
       xbacklight -set "1.1"
     fi
-    xsetroot -name " $(date +%a | tr '[A-Z]' '[a-z]')  $(cal | grep $(date +%d) | grep -v "$(date '+%B %Y')" | sed "s/$(date +%d)/[$(date +%d)]/")  $(date +%m/%Y) | $(date +%H:%M) | net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND "
+    xsetroot -name " $(date +%a | tr '[A-Z]' '[a-z]')  $(cal | grep $(date +%d) | grep -v "$(date '+%B %Y')" | sed "s/$(date +%d)/[$(date +%d)]/" | sed 's/  \+//g')  $(date +%m/%Y) | $(date +%H:%M) | net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND "
     sleep 5
 done &
 #autostart
