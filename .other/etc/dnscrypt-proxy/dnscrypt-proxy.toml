@@ -79,7 +79,7 @@ require_nolog = true
 require_nofilter = true
 
 # Server names to avoid even if they match all criteria
-disabled_server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare']
+disabled_server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare', 'doh.nsa.gov']
 
 
 ## Always use TCP to connect to upstream servers.
