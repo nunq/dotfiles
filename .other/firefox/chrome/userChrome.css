@@ -1,4 +1,42 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* in-browser settings: layout: normal, theme: dark */
+
+
+
+/* 2020-04-07: added for v75.0 */
+
+:root[lwt-popup-brighttext] {
+  --urlbar-popup-action-color: #eee !important;
+  --urlbar-popup-url-color: #eee !important;
+}
+
+#urlbar > * {
+  border-color: transparent !important;
+  background: #454545 !important;
+  box-shadow: none !important;
+}
+
+/* loading screen */
+#tabbrowser-tabpanels{
+  background-color: var(--uc-light-bkgnd-color, #1d1d1d) !important;
+}
+
+/* BEGIN: from https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/compact_urlbar_megabar.css . fixes urlbar*/
+#urlbar.megabar[breakout]{
+  margin-inline-start: 0px !important;
+  width: 100% !important;
+  left: 0 !important;
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+}
+#urlbar.megabar[breakout]:not([open]){ bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important; }
+.urlbarView.megabar{ margin-inline: 0 !important; width: auto !important; }
+.urlbarView-row{ padding-inline: 4px !important; }
+#urlbar-background{ animation: none !important; }
+/* below: hardcoded 30px, cuz of bugs */
+#urlbar-input-container{ padding: 0 !important; height: 30px !important; }
+/* END */
+
+/* 2020-04-07: added before v75.0 */
 
 /* disable expanding pinned tabs on hover */
 tabbrowser-tabs .tabbrowser-tab:not([selected])[pinned], .tabbrowser-tab[fadein][pinned]:not([style*="max-width"]) {
@@ -6,18 +44,10 @@ tabbrowser-tabs .tabbrowser-tab:not([selected])[pinned], .tabbrowser-tab[fadein]
   max-width: 40px !important;
 }
 
-/* hide that atrocious default scrollbar */
+/* make that atrocious default scrollbar at least somewhat better */
 scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #6b6b6b #1f1f1f;
-}
-
-/* set urlbar autocomplete highlight color to grey (was blue) */
-* {
-	--autocomplete-popup-highlight-background: #5555 !important;
-/* 'visit site' in suggestions: green -> white; etc */
-	--urlbar-popup-url-color: #eee;
-	--urlbar-popup-action-color: #eee;
 }
 
 /* topbar right: remove space between >> button and hamburger menu */
@@ -30,12 +60,10 @@ scrollbar {
   font-family: "Fira Code" !important;
 }
 
-
 /* remove black bar below url bar */
 #navigator-toolbox {
   border-bottom: none !important;
 }
-
 
 /* BEGIN: in url bar (left) */
 
@@ -49,7 +77,7 @@ scrollbar {
   display: none;
 }
 
-/*  hide the no autoplay allowed icon */
+/*hide the no autoplay allowed icon */
 #blocked-permissions-container {
   display: none;
 }
@@ -59,21 +87,33 @@ scrollbar {
   display: none;
 }
 
+/* Description: only show lock left of url */
+#permissions-granted-icon, .sharing-icon {
+  display: none;
+}
+
+/* hide https lock stuff (EV certs, etc). source: https://github.com/Timvde/UserChrome-Tweaks/blob/master/navbar/hide-ssl-lock.css */
+
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
+  display: none !important;
+}
 /* END */
 
 
 /* tabview bg */
-.tabbrowser-tab .tab-background {
-	background-color: #1d1d1d !important;
+scrollbox:nth-child(4) {
+  background: #0d0d0d;
 }
 
 /* dark link previews (bottom left) */
 /* source: https://www.reddit.com/r/FirefoxCSS/comments/dtyw6x/how_do_i_make_this_link_preview_thingy_dark_its/ */
 #statuspanel-label {
-    background-color: black !important;
-    border: 1px none black !important;
+    background-color: #1d1d1d !important;
+    border: 1px none #1d1d1d !important;
     border-top-style: solid !important;
-    color: white !important;
+    color: #eee !important;
 }
 
 /*
@@ -86,108 +126,15 @@ scrollbar {
   display: none;
 }
 
-/*
- * Description: only show lock left of url
- * source: me
- */
-
-#permissions-granted-icon, .sharing-icon {
-  display: none;
-}
-
-/*
- * Remove circle, background and padding from back button
- * https://github.com/Timvde/UserChrome-Tweaks/blob/master/navbar/remove-back-button-circle.css
- * Contributor(s): Skrity
- */
-
-:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
-  background-color: unset !important;
-  border: unset !important;
-  padding: var(--toolbarbutton-inner-padding) !important;
-  border-radius: var(--toolbarbutton-border-radius) !important;
-  width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;
-}
-
-/* Hover and Active states to mimic other buttons */
-:root:not([uidensity="compact"]) #back-button:hover:not([disabled]) > .toolbarbutton-icon {
-  background-color: var(--toolbarbutton-hover-background) !important;
-}
-
-:root:not([uidensity="compact"]) #back-button:active:not([disabled]) > .toolbarbutton-icon {
-  background-color: var(--toolbarbutton-active-background) !important;
-}
-
-/* Remove pre-padding */
-:root:not([uidensity="compact"]) #back-button {
-  padding-inline-start: 3px !important;
-}
-
-
-/* hide https lock stuff https://github.com/Timvde/UserChrome-Tweaks/blob/master/navbar/hide-ssl-lock.css */
-
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
-  display: none !important;
-}
-
+/* ================================================================== */
 
 /* minimal responsive theme https://github.com/moamenk/Firefox-Minimal-Responsive-Theme */
 
-/* Contextual toolbar buttons, only show on hover, this is what matters, the rest of the file are just style tweaks I like
- */
-
-:root:not([customizing]) #nav-bar toolbarbutton
- {
-    margin-left: -28px !important;
-    opacity: 0 !important;
-    transform: scale(.85, .85) !important;
-    pointer-events: none !important;
-    transition: all 100ms var(--animation-easing-function) !important;
-}
-
-:root:not([customizing]) :hover > #nav-bar toolbarbutton,
-:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
-:root:not([customizing]) :hover > #titlebar toolbarbutton {
-    transform: scale(1, 1) !important;
-opacity:1 !important;
-margin-left:0 !important;
-pointer-events: auto !important;
-}
-
-/* auto collapse nav bar height when in stealth mode (not active), kinda jumpy and annoying after a while so let's just comment it for now */
-
-/*
-#nav-bar {
-	height: 30px !important;
-    transition: all 300ms var(--animation-easing-function) !important;
-}
-:root:not([customizing]) :hover > #nav-bar,
-:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar {
-height: 35px !important;
-}
-*/
-
-/* url bar text shrinks when in "stealth mode" */
-#nav-bar #urlbar {
-  transition: all 100ms var(--animation-easing-function) !important;
-}
-
-:root:not([customizing]) :hover > #nav-bar #urlbar,
-
-/* some experimentation with expanding tab on hover to see the title better, it's kinda stupid but I was just messing around, could be something useful in the future */
-.tabbrowser-tab:not([selected]):hover { 
-   min-width: 300px !important;
-   transition: min-width 150ms var(--animation-easing-function) 2s !important;
-}
-
-/* random style tweaks I like */
 /*
 Remove borders everywhere, some code copied from edge style for firefox
 */
 
- :root {
+:root {
   --tabs-border: transparent !important;
 }
 
@@ -211,24 +158,6 @@ Remove borders everywhere, some code copied from edge style for firefox
   border-image-slice: 0 !important;
 }
 
-#urlbar {
-  opacity:1 !important;
-}
-
-#urlbar .urlbar-input-box {
-  opacity:1 !important;
-}
-
-#urlbar, .searchbar-textbox {
-	border: 0px !important;
-	height: 20px !important;
-}
-
-#urlbar {
-	margin-left: 1px !important;
-	margin-right: 1px !important;
-}
-
 .tab-background {
 	border-top: none !important;
 }
@@ -244,50 +173,15 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-
 	box-shadow: none !important;
 	border: 0px !important;
 }
-
-/* bookmarks toolbar edge style */
-
-toolbarbutton.bookmark-item {
-	border: 1px rgba(0, 0, 0, 0) solid !important;
-}
-
-toolbarbutton.bookmark-item:hover {
-	background-color: rgba(75, 75, 75, 1);
-	border: 1px rgba(75, 75, 75, 1) solid !important;
-}
-
-.titlebar-placeholder[type="post-tabs"] {
-	width: 50px !important;
-}
-
 #TabsToolbar {
 	margin-bottom: 0px !important;
 }
 #navigator-toolbox::after {
 	border-bottom: 0px !important;
 }
-
 #TabsToolbar .tab-background {
 	border-right: 0px !important;
 	border-left: 0px !important;
-}
-.scrollbutton-up, .scrollbutton-down {
-	margin-bottom: 0px !important;
-}
-.scrollbutton-up:hover, .scrollbutton-down:hover {
-	background: rgba(42, 42, 42, 1) ;
-}
-.scrollbutton-up:hover:active, .scrollbutton-down:hover:active {
-	background: #444;
-}
-.tabs-newtab-button .toolbarbutton-icon {
-	background: transparent ;
-}
-#urlbar, .searchbar-textbox {
-	box-shadow: none !important;
-}
-.close-icon > .toolbarbutton-icon {
-	border-radius: 0px !important;
 }
 #TabsToolbar[movingtab] {
 	padding-bottom: 0px !important;
@@ -296,21 +190,14 @@ toolbarbutton.bookmark-item:hover {
 	padding-bottom: 0px !important;
 	margin-bottom: 0px !important;
 }
-#new-tab-button > .toolbarbutton-icon, #alltabs-button > .toolbarbutton-icon {
-	background-color: transparent;
-}
 :root {
 	--toolbarbutton-border-radius: 0px !important;
-}
-
-#context-back > .menu-iconic-left, #context-forward > .menu-iconic-left, #context-reload > .menu-iconic-left, #context-stop > .menu-iconic-left, #context-bookmarkpage > .menu-iconic-left {
-	padding: 0px !important;
 }
 
 #tabbrowser-tabs {
 	--tab-line-color: -moz-win-accentcolor !important;
 	--tab-loading-fill: -moz-win-accentcolor !important;
-box-shadow: none !important;
+  box-shadow: none !important;
 }
 #tabbrowser-tabs:-moz-window-inactive {
 	--tab-line-color: rgb(128, 128, 128) !important;
@@ -334,19 +221,70 @@ box-shadow: none !important;
   display: -moz-box !important;
 }
 
-/*
- * Underlines and dims unloaded tabs
- *
- * Contributor(s): josemam
- */
 
-toolbarspring {
-  min-width: 8px;
-  max-width: 8px;
+/* from: https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/dark_context_menus.css */ 
+
+/* Makes context menus dark. Also affects some portions of menu popups */
+/* Uses dark theme colors but does not respect dark theme variables (they wouldn't work on sidebar context menu) */
+
+:root{
+  --uc-menu-bkgnd: rgb(74,74,79);
+  --uc-menu-color: rgb(230,230,230);
+  --uc-menu-dimmed: rgba(255,255,255,0.1);
+  --uc-menu-disabled: rgb(50,50,50);
+}
+panel richlistbox,
+panel tree,
+panel button,
+panel menulist,
+panel textbox,
+panel input,
+menupopup,
+menu,
+menuitem{ -moz-appearance: none !important; }
+
+menulist,
+menuitem,
+menu{ min-height: 1.8em }
+
+panel menulist{ border: 1px solid transparent }
+
+panel richlistbox,
+panel tree,
+panel button,
+panel menulist,
+panel textbox,
+panel input,
+panel #searchbar,
+menupopup:not(#BMB_bookmarksPopup),
+#main-menubar > menu > menupopup,
+#context-navigation{
+  color: var(--uc-menu-color) !important;
+  padding: 2px;
+  background-color: var(--uc-menu-bkgnd) !important;
+  border-color: var(--uc-menu-disabled) !important;
 }
 
-/* Change tab max width */
-.tabbrowser-tab[fadein]:not([pinned]) {
-  max-width: 300px !important;
-}
+panel textbox input{ padding: 2px !important; }
 
+panel input{ border-width: 1px; border-style: solid; background-color: rgba(0,0,0,0.1) !important; }
+panel #searchbar{ background-color: rgba(0,0,0,0.1) !important; padding: 0 !important; }
+panel #searchbar input{ background-color: transparent !important; }
+
+panel menulist:hover,
+panel menulist[open]{ border-color: Highlight !important; }
+
+#editBMPanel_folderMenuList > menupopup > menuitem{ color: var(--uc-menu-color) !important; }
+
+panel treechildren::-moz-tree-row(selected),
+panel button:hover,
+menu:hover,
+menu[_moz-menuactive],
+menu[open],
+menuitem:hover,
+menuitem[_moz-menuactive]{ background-color: var(--uc-menu-dimmed) !important; color: inherit !important; }
+
+menu[disabled="true"],
+menuitem[disabled="true"]{ color: var(--uc-menu-disabled) !important; }
+
+menu:not(.subviewbutton) > .menu-right{ filter: invert(1) }
