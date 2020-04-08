@@ -2,6 +2,12 @@
 
 /* 2020-04-08: fixes */
 
+/* rm line below typed text in mega urlbar */
+.urlbarView-body-inner {
+  border-top: none !important;
+}
+
+/* tabview bg (2nd) */
 .tabbrowser-tab:not([selected]) {
   background: #2d2d2d !important!;
 }
