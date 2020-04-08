@@ -1,11 +1,40 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 /* in-browser settings: layout: normal, theme: dark */
 
+/* 2020-04-08: fixes */
 
+.tabbrowser-tab:not([selected]) {
+  background: #2d2d2d !important!;
+}
+
+/* hide icons next to urlbar results */
+#urlbar-results > .urlbarView-row > .urlbarView-row-inner > .urlbarView-no-wrap > img {
+  visibility: hidden;
+}
+
+/* mega urlbar: remove margin between first result & typed text */
+#urlbar-results:first-child {
+  margin-top: -7px !important;
+}
+
+/* mega urlbar: remove margins between results */
+#urlbar-results > .urlbarView-row {
+  margin-bottom: -7px !important;
+}
+
+/* urlbar 'switch to tab action': globe icon: recolor indicator (was blue) */
+.urlbarView-type-icon {
+  color: rgba(250,250,250,0.7) !important;
+}
+
+/* recolor selected result in mega urlbar */
+.urlbarView-row[selected] > .urlbarView-row-inner {
+  background: #eee !important;
+  color: #3d3d3d !important;
+}
 
 /* 2020-04-07: added for v75.0 */
 
-:root[lwt-popup-brighttext] {
+:root {
   --urlbar-popup-action-color: #eee !important;
   --urlbar-popup-url-color: #eee !important;
 }
@@ -30,13 +59,22 @@
 }
 #urlbar.megabar[breakout]:not([open]){ bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important; }
 .urlbarView.megabar{ margin-inline: 0 !important; width: auto !important; }
-.urlbarView-row{ padding-inline: 4px !important; }
+/* below: changed 4px to 0px because i dont like that sidepadding *//
+.urlbarView-row{ padding-inline: 0px !important; }
 #urlbar-background{ animation: none !important; }
 /* below: hardcoded 30px, cuz of bugs */
 #urlbar-input-container{ padding: 0 !important; height: 30px !important; }
 /* END */
 
+
+/* tabview bg */
+scrollbox:nth-child(4) {
+  background: #0d0d0d;
+}
+
 /* 2020-04-07: added before v75.0 */
+/* stuff above doesnt work if below this line */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* disable expanding pinned tabs on hover */
 tabbrowser-tabs .tabbrowser-tab:not([selected])[pinned], .tabbrowser-tab[fadein][pinned]:not([style*="max-width"]) {
@@ -100,12 +138,6 @@ scrollbar {
   display: none !important;
 }
 /* END */
-
-
-/* tabview bg */
-scrollbox:nth-child(4) {
-  background: #0d0d0d;
-}
 
 /* dark link previews (bottom left) */
 /* source: https://www.reddit.com/r/FirefoxCSS/comments/dtyw6x/how_do_i_make_this_link_preview_thingy_dark_its/ */
