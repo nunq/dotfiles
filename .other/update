@@ -9,6 +9,7 @@ sudo cp modprobe.d/* ~/.other/etc/modprobe.d/
 sudo cp sysctl.d/* ~/.other/etc/sysctl.d/
 sudo cp udev/rules.d/51-android.rules ~/.other/etc/udev/rules.d/
 sudo cp security/pam_env.conf ~/.other/etc/security/
+sudo cp systemd/system/slock@nils.service ~/.other/etc/systemd/system/
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME add -u
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME add ~/.other
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME status
