@@ -12,5 +12,6 @@ sudo cp security/pam_env.conf ~/.other/etc/security/
 sudo cp systemd/system/slock@nils.service ~/.other/etc/systemd/system/
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME add -u
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME add ~/.other
+git --git-dir=$HOME/.cfg/ --work-tree=$HOME add ~/.scripts/
 git --git-dir=$HOME/.cfg/ --work-tree=$HOME status
 echo -e "\n\e[31m>>> don't commit sensitive data! check the added files. <<<\n\e[0m"

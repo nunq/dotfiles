@@ -1,0 +1,22 @@
+#!/bin/bash
+set -eu -o pipefail
+
+while true; do
+  if [ "$(lpq | sed 1d)" == "no entries" ]; then
+    # not printing
+    continue
+  elif [ ! "$(lpq | sed 1d)" == "no entries" ]; then
+    # started printing
+    NOT_FINISHED=true
+    while $NOT_FINISHED; do
+      # still printing
+      if [ "$(lpq | sed 1d)" == "no entries" ]; then
+        NOT_FINISHED=false
+        notify-send -t 3000 "cupsnotifier" "print job(s) completed"
+        # finished printing
+      fi
+      sleep 1
+    done
+  fi
+  sleep 1
+done
