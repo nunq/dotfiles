@@ -1,4 +1,11 @@
 #!/bin/bash
+# send a notification when print job(s) complete(s)
+# i'd advise only starting this script before a print job,
+# because it's pretty expensive cpu-wise. when running lpq,
+# a new cupsd instance is created, instead of reusing the
+# already existing one. i've looked into dbus calls, but
+# they don't really seem promising either... :/
+
 set -eu -o pipefail
 
 while true; do
@@ -13,10 +20,11 @@ while true; do
       if [ "$(lpq | sed 1d)" == "no entries" ]; then
         NOT_FINISHED=false
         notify-send -t 3000 "cupsnotifier" "print job(s) completed"
+        exit 0
         # finished printing
       fi
-      sleep 1
+      sleep 2
     done
   fi
-  sleep 1
+  sleep 2
 done

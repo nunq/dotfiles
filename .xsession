@@ -53,6 +53,6 @@ NSCPROP=$(xinput list-props 9 | grep -oP "Natural Scrolling Enabled \(.*?\)" | s
 xinput set-prop "$TOUCHPADID" "$TTCPROP" 1 &
 xinput set-prop "$TOUCHPADID" "$NSCPROP" 1 &
 #wallpaper
-~/.scripts/fehbg &
+~/.scripts/fehbg
 #finally
 exec ~/.scripts/startdwm
