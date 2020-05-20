@@ -1,4 +1,8 @@
 /* For styling the rendered Markdown */
+body {
+  font-family: "IBM Plex Sans";
+}
+
 code, pre {
   font-family: "Fira Code";
 }
@@ -8,14 +12,8 @@ code, pre {
   border-radius: 4px;
 }
 
-#rendered-md > div > pre.hljs { /* code block bg */
-  background: #eee;
-}
-
-.inline-code { /* inline code bg */
-  background: #eee;
-}
-
-mark { /* ==highlight== */
+/* make ==highlight== yellow */
+mark {
   background: yellow;
 }
+
