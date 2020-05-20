@@ -11,12 +11,12 @@ opacity: 1 !important;
 
 /* heavier headings */
 .ace_heading {
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
 /* hide back & forward buttons in editor toolbar */
 #react-root > div > div > div:nth-child(8) > div.editor-toolbar > a:nth-child(1), #react-root > div > div > div:nth-child(8) > div.editor-toolbar > a:nth-child(2) {
-  display: none;
+  display: none !important;
 }
 
 /* sync button */
