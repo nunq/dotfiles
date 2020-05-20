@@ -1,0 +1,4 @@
+/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+#react-root > div > div > div.side-bar > div:nth-child(1) > div:nth-child(4) { /* hide 'tags' */
+  display: none !important;
+}
