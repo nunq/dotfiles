@@ -30,3 +30,7 @@ opacity: 1 !important;
   opacity: 0.8 !important;
 }
 
+/* hide sync icon */
+i > fa,.fa-refresh {
+	display: none;
+}
