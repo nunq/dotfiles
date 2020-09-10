@@ -9,3 +9,7 @@
 	signingkey = C93170521663B88D
 [commit]
 	gpgsign = true
+[diff]
+	tool = meld
+[difftool]
+	prompt = false

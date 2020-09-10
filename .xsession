@@ -46,6 +46,7 @@ xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-
 start-pulseaudio-x11 &
 dunst & # ; systemctl --user import-environment DISPLAY &
 #dbus-daemon --session &
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & # polkit agent
 #enable touch to click & natural scrolling
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")
 TTCPROP=$(xinput list-props $TOUCHPADID | grep -oP "Tapping Enabled \(.*?\)" | sed "s/.*Tapping Enabled (//" | sed "s/)//")

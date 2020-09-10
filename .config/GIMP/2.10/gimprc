@@ -56,7 +56,7 @@
 (toolbox-color-area no)
 (user-manual-online yes)
 (color-profile-policy convert)
-(layer-new-name "#")
+(layer-new-name "layer-1")
 (layer-add-mask-type copy)
 (layer-add-mask-invert yes)
 (selection-feather-radius 36)
