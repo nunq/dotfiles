@@ -16,8 +16,8 @@ case "$1" in
     killall redshift || true
     mons -m
     switchaudio
-    echo "you might want to killall xautolock"
-    echo "you might want to killall dunst"
+    echo "optimizing for screensharing"
+    ~/.scripts/screensharing start
     ;;
   e)
     if [ "$2" == "" ]; then
@@ -28,19 +28,12 @@ case "$1" in
     killall redshift || true
     mons -e "$SIDE"
     switchaudio
-    echo "you might want to killall xautolock"
-    echo "you might want to killall dunst"
+    echo "optimizing for screensharing"
+    ~/.scripts/screensharing start
     ;;
   d)
-    # re-enable redshift
-    redshift -l "$(curl -s https://ipapi.co | grep -oP '(?<=<td class="ipval" data-clipboard-text=").*?(?=")' | sed -n 7p | sed 's/, /:/')" || true &
+    ~/.scripts/screensharing stop
     mons -o
-    if ! pgrep xautolock; then
-      xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" &
-    fi
-    if ! pgrep dunst; then
-      dunst &
-    fi
     sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:analog-stereo+input:analog-stereo
     sleep 4
     tput reset

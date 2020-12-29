@@ -1,0 +1,4 @@
+#!/bin/bash
+v="$(echo "" | dmenu -p "search for ")"
+[[ -z "$v" ]] && exit 0
+xdg-open "$(grep -i "$v" ~/fs | sed 1q)" &

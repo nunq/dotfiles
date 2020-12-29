@@ -8,4 +8,5 @@
 FILE="$1"
 FILEID="$(shuf -n 1 -i 10000-99999)" # try to avoid file name collisions
 FILEEXT="$(basename "$FILE" | sed 's/.*\.//')"
-{ echo -ne "HTTP/1.0 200 OK\r\nContent-Length: $(wc -c < "$FILE")\r\nContent-Disposition: attachment; filename=file-"$FILEID"."$FILEEXT"\r\n\r\n"; cat "$FILE"; } | nc -lp 8005
+echo "$(hostname --ip-address)"":8005"
+{ echo -ne "HTTP/1.0 200 OK\r\nContent-Length: $(wc -c < "$FILE")\r\nContent-Disposition: attachment; filename=file-"$FILEID"."$FILEEXT"\r\n\r\n"; cat "$FILE"; } | ncat -l -p 8005

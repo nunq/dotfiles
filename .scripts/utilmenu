@@ -1,17 +1,18 @@
 #!/bin/sh
     
-case "$(echo -e "calculator\nnew wallpaper\npass\nscreenshot\nsend to phone\n\nbt connect\nbt disconnect\ncupsnotify\nwifictrl\n\nlock screen\nsuspend\nreboot\nrlockd\nshutdown" | dmenu -i -p "utility menu:" -l 16 )" in
+case "$(echo -e "calculator\nnew wallpaper\npass\nscreenshot\nopen file\nsend to phone\n\nbt connect\nbt disconnect\ncupsnotify\nwifictrl\n\nsuspend\nhibernate\nreboot\nrlockd\nshutdown" | dmenu -i -p "utility menu:" -l 16 )" in
         calculator) kitty bc -l ;;
         new\ wallpaper) $HOME/.scripts/fehbg ;;
         pass) $HOME/.scripts/passnosave ;;
         screenshot) $HOME/.scripts/screenshot ;;
+        open\ file) $HOME/.scripts/search-and-open ;;
         send\ to\ phone) $HOME/.scripts/sendtophone.fish ;;
         bt\ connect) $HOME/.scripts/btmenu ;;
         bt\ disconnect) $HOME/.scripts/btmenu -d ;;
         cupsnotify) $HOME/.scripts/cups-finished-printing-notifier ;;
         wifictrl) kitty $HOME/.scripts/guidedconnman ;;
-        lock\ screen) /usr/bin/pactl set-sink-mute 0 toggle; exec slock ;;
         suspend) exec systemctl suspend ;;
+        hibernate) exec systemctl hibernate ;;
         reboot) exec systemctl reboot ;;
         rlockd) $HOME/code/proj/remotelockd/rlockd -s;;
         shutdown) exec systemctl poweroff ;;

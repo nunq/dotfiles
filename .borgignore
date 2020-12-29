@@ -39,4 +39,6 @@
 /home/nils/Music
 /home/nils/android-studio
 /home/nils/go
+/home/nils/QEMU
+*.img
 *.git/

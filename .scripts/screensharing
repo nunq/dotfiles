@@ -1,0 +1,24 @@
+#!/bin/bash
+
+case "$1" in
+  start)
+    echo "stopping services..."
+    killall redshift || true
+    killall dunst || true
+    echo "disabling cronjobs..."
+    crontab -l > ~/.cronbackup
+    crontab -r
+    ;;
+  stop)
+    echo "restarting services..."
+    redshift -l "$(curl -s https://ipapi.co | grep -oP '(?<=<td class="ipval" data-clipboard-text=").*?(?=")' | sed -n 7p | sed 's/, /:/')"  </dev/null &>/dev/null &
+    dunst  </dev/null &>/dev/null &
+    xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" </dev/null &>/dev/null &
+    echo "sudo for re-installing crontab..."
+    sudo mv ~/.cronbackup /var/spool/cron/nils
+    crontab -l
+    echo "please check the crontab!"
+    ;;
+esac
+
+

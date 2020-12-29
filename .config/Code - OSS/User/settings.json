@@ -1,6 +1,5 @@
 {
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Atom One Dark",
     "explorer.confirmDelete": false,
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "Fira Code",
@@ -17,5 +16,53 @@
     "vim.neovimPath": "/usr/bin/nvim",
     "explorer.confirmDragAndDrop": false,
     "vim.vimrc.enable": true,
-    "vim.disableExtension": true
+    "vim.disableExtension": true,
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.suggestSelection": "first",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "todo-tree.highlights.defaultHighlight": {
+        "icon": "alert",
+        "type": "text",
+        "foreground": "#ffa500",
+        "fontWeight": "bold",
+        "opacity": 50,
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "check",
+            "type": "line",
+            "gutterIcon": true
+        },
+        "FIXME": {
+            "foreground": "yellow",
+            "background": "black",
+            "iconColour": "yellow",
+            "gutterIcon": true
+        },
+        "BUG": {
+            "foreground": "red",
+            "background": "#fff",
+            "iconColour": "red",
+            "gutterIcon": true,
+            "opacity": 100
+        },
+        "NOTE": {
+            "foreground": "#00cc66",
+            "background": "#3333ff",
+            "iconColour": "#00cc66",
+            "gutterIcon": true,
+            "opacity": 100
+        }
+    },
+    "todo-tree.general.tags": [
+        "TODO",
+        "FIXME",
+        "BUG",
+        "NOTE"
+    ],
+    "todo-tree.regex.regex": "((//|%|#|<!--|;|/\\*)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "latex-workshop.message.update.show": false,
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "editor.wordWrap": "on"
 }

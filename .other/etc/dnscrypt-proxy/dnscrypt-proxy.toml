@@ -49,7 +49,7 @@ max_clients = 250
 ## Note (2): this feature is not compatible with systemd socket activation.
 ## Note (3): when using -pidfile, the PID file directory must be writable by the new user
 
-# user_name = 'nobody'
+#user_name = 'nobody'
 
 
 ## Require servers (from static + remote sources) to satisfy specific properties
@@ -70,7 +70,7 @@ doh_servers = false
 ## Require servers defined by remote sources to satisfy specific properties
 
 # Server must support DNS security extensions (DNSSEC)
-require_dnssec = false
+require_dnssec = true
 
 # Server must not log user queries (declarative)
 require_nolog = true
@@ -79,7 +79,7 @@ require_nolog = true
 require_nofilter = true
 
 # Server names to avoid even if they match all criteria
-disabled_server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare', 'doh.nsa.gov']
+disabled_server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare', 'doh.nsa.gov', 'meganerd', 'soltysiak']
 
 
 ## Always use TCP to connect to upstream servers.
@@ -333,7 +333,7 @@ cache = true
 
 ## Cache size
 
-cache_size = 4096
+cache_size = 1024
 
 
 ## Minimum TTL for cached entries
