@@ -64,5 +64,7 @@
     "latex-workshop.message.update.show": false,
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "latex-workshop.latex.watch.delay": 630,
+    "latex-workshop.message.badbox.show": false
 }
