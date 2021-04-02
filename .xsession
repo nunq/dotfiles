@@ -41,11 +41,10 @@ done &
 #autostart
 clipmenud &
 ssh-agent &
-redshift -l "$(curl -s https://ipapi.co | grep -oP '(?<=<td class="ipval" data-clipboard-text=").*?(?=")' | sed -n 7p | sed 's/, /:/')" || true &
+redshift -l "$(curl -ks https://iplocation.com --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" | grep -oP '(?<=<td class="l..">).*?(?=<\/td>)' | tr '\n' ':' | sed 's/:$//')" || true &
 xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" &
 start-pulseaudio-x11 &
-dunst & # ; systemctl --user import-environment DISPLAY &
-#dbus-daemon --session &
+dunst &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & # polkit agent
 #enable touch to click & natural scrolling
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")

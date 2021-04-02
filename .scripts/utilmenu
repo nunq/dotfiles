@@ -5,7 +5,7 @@ case "$(echo -e "calculator\nnew wallpaper\npass\nscreenshot\nopen file\nsend to
         new\ wallpaper) $HOME/.scripts/fehbg ;;
         pass) $HOME/.scripts/passnosave ;;
         screenshot) $HOME/.scripts/screenshot ;;
-        open\ file) $HOME/.scripts/search-and-open ;;
+        open\ file) kitty $HOME/.scripts/search-and-open & ;;
         send\ to\ phone) $HOME/.scripts/sendtophone.fish ;;
         bt\ connect) $HOME/.scripts/btmenu ;;
         bt\ disconnect) $HOME/.scripts/btmenu -d ;;

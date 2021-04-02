@@ -19,6 +19,7 @@ borg
 btrfs-progs
 busybox
 bzip2
+certbot
 chromium
 clipmenu
 clipnotify
@@ -40,7 +41,9 @@ exfat-utils
 fakeroot
 feh
 file
+file-roller
 filesystem
+filezilla
 findutils
 fish
 flex
@@ -57,11 +60,13 @@ git
 glibc
 gnome-keyring
 gnu-netcat
+graphviz
 grep
 groff
 gvfs
 gzip
 htop
+hugo
 hunspell-de
 iftop
 ijs
@@ -75,7 +80,6 @@ iputils
 irssi
 joplin-desktop
 jq
-kcachegrind
 kitty
 less
 liblouis
@@ -100,6 +104,8 @@ man-db
 man-pages
 mate-polkit
 mdadm
+mediainfo
+megatools
 meld
 minecraft-launcher
 mons
@@ -138,6 +144,7 @@ shadow
 signal-desktop
 simple-mtpfs
 slock
+speedtest-cli
 spotify
 sqlitebrowser
 sshpass
@@ -150,6 +157,7 @@ sysfsutils
 systemd
 tar
 tcpdump
+testdisk
 texinfo
 texlive-bibtexextra
 texlive-bin
@@ -158,6 +166,7 @@ texlive-latexextra
 texlive-pictures
 texlive-science
 thunar
+thunar-archive-plugin
 tlp
 tor-browser
 ttf-liberation
@@ -165,6 +174,7 @@ tumbler
 ufw
 unrar
 unzip
+upower
 usbutils
 util-linux
 v4l2loopback-dkms
@@ -172,6 +182,7 @@ valgrind
 w3m
 wget
 which
+whois
 wpa_supplicant
 xautolock
 xdg-utils
