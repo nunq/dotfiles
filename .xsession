@@ -46,12 +46,14 @@ xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-
 start-pulseaudio-x11 &
 dunst &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & # polkit agent
-#enable touch to click & natural scrolling
+#enable touch to click & natural scrolling & enable touchpad while typing
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")
-TTCPROP=$(xinput list-props $TOUCHPADID | grep -oP "Tapping Enabled \(.*?\)" | sed "s/.*Tapping Enabled (//" | sed "s/)//")
-NSCPROP=$(xinput list-props 9 | grep -oP "Natural Scrolling Enabled \(.*?\)" | sed "s/.*Natural Scrolling Enabled (//" | sed "s/)//")
-xinput set-prop "$TOUCHPADID" "$TTCPROP" 1 &
-xinput set-prop "$TOUCHPADID" "$NSCPROP" 1 &
+TOUCH_TO_CLICK_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Tapping Enabled \(.*?\)" | sed "s/.*Tapping Enabled (//" | sed "s/)//")
+NAT_SCROLLING_PROP=$(xinput list-props 9 | grep -oP "Natural Scrolling Enabled \(.*?\)" | sed "s/.*Natural Scrolling Enabled (//" | sed "s/)//") # mouse id
+DISABLE_WHILE_TYPING_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Disable While Typing Enabled \(.*?\)" | sed "s/.*Disable While Typing Enabled (//" | sed "s/)//")
+xinput set-prop "$TOUCHPADID" "$TOUCH_TO_CLICK_PROP" 1 &
+xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 0 &
+xinput set-prop "$TOUCHPADID" "$DISABLE_WHILE_TYPING_PROP" 0 &
 #wallpaper
 ~/.scripts/fehbg
 #finally

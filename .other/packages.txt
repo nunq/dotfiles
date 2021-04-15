@@ -72,7 +72,6 @@ iftop
 ijs
 imagemagick
 inetutils
-intel-hybrid-codec-driver-gcc10
 intel-media-driver
 intel-ucode
 iproute2
@@ -87,7 +86,8 @@ liblqr
 libnotify
 libraqm
 libtool
-libva-intel-driver-hybrid
+libva-intel-driver
+libva-utils
 libvdpau-va-gl
 libxft-bgra
 libxslt
