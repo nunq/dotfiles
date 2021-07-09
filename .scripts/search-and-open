@@ -1,4 +1,18 @@
 #!/bin/bash
-v="$(echo "" | dmenu -p "search for ")"
+#v="$(echo "" | dmenu -p "search for ")"
+read -p "grep for X in /home: " v
+
 [[ -z "$v" ]] && exit 0
-xdg-open "$(grep -i "$v" ~/fs | sed 1q)" &
+mapfile -t r <<< "$(grep -i "/home.*$v" ~/fs | grep -v Trash | grep -v '/\.\S')"
+
+for (( j=0; j<${#r[@]}; j++ )); do
+  printf "[%02d] %s\n" "$(($j + 1))" "${r[$j]}"
+done
+
+read -p "select one item: " s
+[[ "$s" -gt ${#r[@]} ]] && echo "out of range" && exit 1
+[[ "$s" -lt 1 ]] && echo "not on the list" && exit 1
+
+o=${r[$(($s - 1))]}
+echo "opening $o"
+xdg-open "$o" &

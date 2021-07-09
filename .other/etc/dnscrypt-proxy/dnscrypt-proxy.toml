@@ -30,6 +30,7 @@
 ## Remove the leading # first to enable this; lines starting with # are ignored.
 
 # server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare']
+server_names = ["cs-de","cs-dus1","dnscrypt-de-blahdns-ipv4","dnsforge.de","doh-de-blahdns","libredns","moulticast-de-ipv4","cs-dk","dns.digitale-gesellschaft.ch-2"]
 
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
@@ -79,7 +80,7 @@ require_nolog = true
 require_nofilter = true
 
 # Server names to avoid even if they match all criteria
-disabled_server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare', 'doh.nsa.gov', 'meganerd', 'soltysiak']
+disabled_server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare', 'doh.nsa.gov', 'meganerd', 'soltysiak', 'acsacsar-ams-ipv4', 'ams-dnscrypt-nl', 'scaleway-ams', 'wevpn-uk', 'sicher-surfen-de']
 
 
 ## Always use TCP to connect to upstream servers.

@@ -1,0 +1,12 @@
+*.borgign
+/home/nils/Documents/
+/home/nils/Videos
+/home/nils/.local/share/Trash/
+/home/nils/.cache/
+/var/cache/
+/sys
+/proc
+/root
+/tmp
+/run
+/mnt

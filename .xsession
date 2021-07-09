@@ -49,10 +49,11 @@ dunst &
 #enable touch to click & natural scrolling & enable touchpad while typing
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")
 TOUCH_TO_CLICK_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Tapping Enabled \(.*?\)" | sed "s/.*Tapping Enabled (//" | sed "s/)//")
-NAT_SCROLLING_PROP=$(xinput list-props 9 | grep -oP "Natural Scrolling Enabled \(.*?\)" | sed "s/.*Natural Scrolling Enabled (//" | sed "s/)//") # mouse id
+NAT_SCROLLING_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Natural Scrolling Enabled \(.*?\)" | sed "s/.*Natural Scrolling Enabled (//" | sed "s/)//") # mouse id
 DISABLE_WHILE_TYPING_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Disable While Typing Enabled \(.*?\)" | sed "s/.*Disable While Typing Enabled (//" | sed "s/)//")
 xinput set-prop "$TOUCHPADID" "$TOUCH_TO_CLICK_PROP" 1 &
-xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 0 &
+xinput set-prop 9 "$NAT_SCROLLING_PROP" 0 &
+xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 1 &
 xinput set-prop "$TOUCHPADID" "$DISABLE_WHILE_TYPING_PROP" 0 &
 #wallpaper
 ~/.scripts/fehbg

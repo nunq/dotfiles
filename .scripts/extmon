@@ -3,7 +3,7 @@
 # if audio doesn't work, try: pacmd list-cards
 
 switchaudio() {
-  read -rp "html audio: what thunderbolt port are you using (front|back)? " PORT
+  read -rp "html audio: what thunderbolt port are you using (front|back)? front = closer to lenovo logo: " PORT
   if [ "$PORT" == "front" ];then
     sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo
   elif [ "$PORT" == "back" ];then
@@ -35,8 +35,6 @@ case "$1" in
     ~/.scripts/screensharing stop
     mons -o
     sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:analog-stereo+input:analog-stereo
-    sleep 4
-    tput reset
     ;;
   *)
     echo -e "help:\n m - mirror this display.\n e [right/left] - extend (default is right).\n d - disconnect."

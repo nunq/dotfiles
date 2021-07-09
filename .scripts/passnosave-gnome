@@ -1,0 +1,6 @@
+#!/bin/sh
+# passwords probably can still be found elsewhere, this is linux after all
+gnome-extensions disable clipboard-indicator@tudmotu.com
+passmenu > /dev/null 2>&1
+sleep 5
+gnome-extensions enable clipboard-indicator@tudmotu.com

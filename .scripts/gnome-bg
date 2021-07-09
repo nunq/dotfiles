@@ -1,0 +1,2 @@
+#!/bin/bash
+gsettings set org.gnome.desktop.background picture-uri file://"$(ls /home/nils/Documents/media/wallpapers/w* | sort -R | sed 1q)"
