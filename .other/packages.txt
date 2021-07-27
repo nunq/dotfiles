@@ -118,7 +118,6 @@ iputils
 irssi
 joplin-desktop
 jq
-kdenlive-appimage
 kitty
 less
 liblouis
@@ -196,6 +195,7 @@ signal-desktop
 simple-mtpfs
 slock
 smartmontools
+smu
 speedtest-cli
 spotify
 sqlcipher
@@ -239,6 +239,7 @@ util-linux
 v4l2loopback-dkms
 valgrind
 w3m
+webp-pixbuf-loader
 wget
 which
 whois

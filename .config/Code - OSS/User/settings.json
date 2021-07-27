@@ -66,5 +66,6 @@
     "latex-workshop.message.warning.show": false,
     "editor.wordWrap": "on",
     "latex-workshop.latex.watch.delay": 630,
-    "latex-workshop.message.badbox.show": false
+    "latex-workshop.message.badbox.show": false,
+    "material-icon-theme.opacity": null
 }

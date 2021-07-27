@@ -1,7 +1,4 @@
 #!/bin/bash
-cd ~/.mozilla/firefox/*.default-release/
-cp chrome/* ~/.other/firefox/chrome/
-#cp prefs.js ~/.other/firefox
 cd /etc
 sudo cp connman/main.conf ~/.other/etc/connman/
 sudo cp dnscrypt-proxy/dnscrypt-proxy.toml ~/.other/etc/dnscrypt-proxy/

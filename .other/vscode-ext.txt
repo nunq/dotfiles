@@ -6,3 +6,4 @@ ms-python.python
 ms-vscode.cpptools
 PKief.material-icon-theme
 vscodevim.vim
+WakaTime.vscode-wakatime
