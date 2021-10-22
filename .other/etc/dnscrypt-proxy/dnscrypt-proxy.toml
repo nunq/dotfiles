@@ -30,7 +30,7 @@
 ## Remove the leading # first to enable this; lines starting with # are ignored.
 
 # server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare']
-server_names = ["cs-de","cs-dus1","dnscrypt-de-blahdns-ipv4","dnsforge.de","doh-de-blahdns","libredns","moulticast-de-ipv4","cs-dk","dns.digitale-gesellschaft.ch-2"]
+server_names = ["cs-de","cs-dus1","dnscrypt-de-blahdns-ipv4","dnsforge.de","doh-de-blahdns","libredns","cs-dk","dns.digitale-gesellschaft.ch","ams-dnscrypt-nl","cs-dus2","cs-dus3","dnscrypt.eu-nl","ffmuc.net","libredns"]
 
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.

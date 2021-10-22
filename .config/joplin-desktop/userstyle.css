@@ -17,3 +17,13 @@ mark {
   background: yellow;
 }
 
+/* center note content and images */
+
+#rendered-md {
+  margin: auto !important;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

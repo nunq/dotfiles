@@ -67,5 +67,13 @@
     "editor.wordWrap": "on",
     "latex-workshop.latex.watch.delay": 630,
     "latex-workshop.message.badbox.show": false,
-    "material-icon-theme.opacity": null
+    "material-icon-theme.opacity": 0,
+    "security.workspace.trust.enabled": false,
+    "java.home": "/usr/lib/jvm/java-17-openjdk/",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }

@@ -17,6 +17,7 @@ bluez-utils
 bolt
 borg
 btrfs-progs
+burpsuite
 busybox
 bzip2
 certbot
@@ -36,15 +37,16 @@ dante
 dconf-editor
 device-mapper
 dialog
+dmidecode
 dnscrypt-proxy
 dolphin-emu
 downgrade
 dunst
 e2fsprogs
 easytag
+element-desktop
 eog
 evince
-evolution
 exfat-utils
 fakeroot
 feh
@@ -78,8 +80,8 @@ gnome-font-viewer
 gnome-keyring
 gnome-logs
 gnome-menus
+gnome-power-manager
 gnome-remote-desktop
-gnome-screenshot
 gnome-session
 gnome-settings-daemon
 gnome-shell
@@ -116,6 +118,7 @@ intel-ucode
 iproute2
 iputils
 irssi
+jdk-openjdk
 joplin-desktop
 jq
 kitty
@@ -147,6 +150,7 @@ megatools
 meld
 menulibre
 minecraft-launcher
+minecraft-technic-launcher
 mons
 mpv
 mutter
@@ -154,9 +158,11 @@ my-brother-mfc-l3770cdw
 nautilus
 neovim
 networkmanager
+nextcloud-client
 nmap
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 openvpn
 orca
 otf-fira-code
@@ -179,6 +185,7 @@ pulseaudio-bluetooth
 pulsemixer
 pwgen
 python-eyed3
+python-nautilus
 python-pip
 python-pygments
 python2-gimp
@@ -195,7 +202,6 @@ signal-desktop
 simple-mtpfs
 slock
 smartmontools
-smu
 speedtest-cli
 spotify
 sqlcipher

@@ -5,5 +5,10 @@ mads-hartmann.bash-ide-vscode
 ms-python.python
 ms-vscode.cpptools
 PKief.material-icon-theme
+redhat.java
+vscjava.vscode-java-debug
+vscjava.vscode-java-dependency
+vscjava.vscode-java-pack
+vscjava.vscode-java-test
 vscodevim.vim
 WakaTime.vscode-wakatime
