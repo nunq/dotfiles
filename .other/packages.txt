@@ -282,10 +282,12 @@ xorg-xrandr
 xorg-xrdb
 xorg-xset
 xorg-xsetroot
+xorg-xwd
 xorg-xwininfo
 xorgproto
 yay
 youtube-dl
+yt-dlp
 zathura-djvu
 zathura-pdf-mupdf
 zip
