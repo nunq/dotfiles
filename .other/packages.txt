@@ -1,6 +1,7 @@
 acpi
 aerc
 alsa-utils
+arduino
 asciiquarium
 audacity
 autoconf
@@ -23,7 +24,6 @@ bzip2
 certbot
 cheese
 chrome-gnome-shell
-chromium
 clipmenu
 clipnotify
 code
@@ -55,6 +55,7 @@ file-roller
 filesystem
 filezilla
 findutils
+firefox
 fish
 flex
 gawk
@@ -62,6 +63,7 @@ gcc
 gcc-libs
 gdb
 gdm
+geary
 geckodriver
 geogebra
 gettext
@@ -72,7 +74,6 @@ glibc
 gnome-backgrounds
 gnome-calculator
 gnome-characters
-gnome-clocks
 gnome-color-manager
 gnome-control-center
 gnome-disk-utility
@@ -82,6 +83,7 @@ gnome-logs
 gnome-menus
 gnome-power-manager
 gnome-remote-desktop
+gnome-screenshot
 gnome-session
 gnome-settings-daemon
 gnome-shell
@@ -120,6 +122,7 @@ iputils
 irssi
 jdk-openjdk
 joplin-desktop
+jpegoptim
 jq
 kitty
 less
@@ -149,6 +152,7 @@ mdadm
 megatools
 meld
 menulibre
+meson
 minecraft-launcher
 minecraft-technic-launcher
 mons
@@ -167,6 +171,7 @@ openvpn
 orca
 otf-fira-code
 p7zip
+pacgraph
 pacman
 paperkey
 papirus-icon-theme-git
@@ -176,9 +181,9 @@ patch
 pavucontrol
 pciutils
 perl
+picocom
 pkgconf
 procps-ng
-projectm-pulseaudio
 psmisc
 pulseaudio-alsa
 pulseaudio-bluetooth
@@ -188,6 +193,7 @@ python-eyed3
 python-nautilus
 python-pip
 python-pygments
+python-pyserial
 python2-gimp
 qpdf
 ranger
@@ -226,6 +232,7 @@ texlive-science
 thunar
 thunar-archive-plugin
 thunar-volman
+tk
 tlp
 tor
 tor-browser
@@ -237,12 +244,12 @@ tracker3-miners
 ttf-liberation
 tumbler
 ufw
+units
 unrar
 unzip
 upower
 usbutils
 util-linux
-v4l2loopback-dkms
 valgrind
 w3m
 webp-pixbuf-loader
@@ -287,8 +294,6 @@ xorg-xwininfo
 xorgproto
 yay
 youtube-dl
-yt-dlp
 zathura-djvu
 zathura-pdf-mupdf
 zip
-zoom-system-qt

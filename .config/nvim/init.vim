@@ -1,4 +1,4 @@
-colorscheme monokai
+colorscheme kuroi
 nnoremap <esc> :noh<return><esc>
 nnoremap <M-d> <Nop>
 nnoremap <M-s> <Nop>

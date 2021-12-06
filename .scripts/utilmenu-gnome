@@ -1,7 +1,6 @@
 #!/bin/sh
     
-case "$(echo -e "new wallpaper\npass\nsend to phone" | dmenu -i -p "utility menu:" -l 3 )" in
+case "$(echo -e "new wallpaper\npass" | dmenu -i -p "utility menu:" -l 2 )" in
         new\ wallpaper) $HOME/.scripts/gnome-bg ;;
         pass) $HOME/.scripts/passnosave-gnome ;;
-        send\ to\ phone) $HOME/.scripts/sendtophone-gnome.fish ;;
 esac

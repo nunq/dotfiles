@@ -17,7 +17,6 @@
     "explorer.confirmDragAndDrop": false,
     "vim.vimrc.enable": true,
     "vim.disableExtension": true,
-    "workbench.colorTheme": "Atom One Dark",
     "editor.suggestSelection": "first",
     "latex-workshop.view.pdf.viewer": "tab",
     "todo-tree.highlights.defaultHighlight": {
@@ -25,7 +24,7 @@
         "type": "text",
         "foreground": "#ffa500",
         "fontWeight": "bold",
-        "opacity": 50,
+        "opacity": 50
     },
     "todo-tree.highlights.customHighlight": {
         "TODO": {
@@ -75,5 +74,10 @@
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true
-    }
+    },
+    "extensions.autoUpdate": false,
+    "terminal.integrated.tabs.enabled": false,
+    "workbench.colorTheme": "Monokai",
+    "editor.inlineSuggest.enabled": false,
+    "editor.quickSuggestionsDelay": 100
 }

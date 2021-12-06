@@ -4,3 +4,6 @@ gnome-extensions disable clipboard-indicator@tudmotu.com
 passmenu > /dev/null 2>&1
 sleep 5
 gnome-extensions enable clipboard-indicator@tudmotu.com
+# restart workspace indicator so that clipboard indicator isnt at far left
+gnome-extensions disable workspace-indicator@gnome-shell-extensions.gcampax.github.com
+gnome-extensions enable workspace-indicator@gnome-shell-extensions.gcampax.github.com
