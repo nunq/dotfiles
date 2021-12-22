@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /etc
-sudo cp connman/main.conf ~/.other/etc/connman/
+#sudo cp connman/main.conf ~/.other/etc/connman/
 sudo cp dnscrypt-proxy/dnscrypt-proxy.toml ~/.other/etc/dnscrypt-proxy/
 sudo cp modprobe.d/* ~/.other/etc/modprobe.d/
 sudo cp sysctl.d/* ~/.other/etc/sysctl.d/

@@ -1,0 +1,9 @@
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 0 !important;
+}
+.tabbrowser-tab{
+  padding-inline: 1.5px !important;
+}
+.tabbrowser-tab[first-visible-tab] {
+  padding-inline-start: 3px !important;
+} /* https://www.reddit.com/r/FirefoxCSS/comments/p4f9af/fixing_the_space_between_tabs/ */

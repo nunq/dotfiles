@@ -1,4 +1,13 @@
 {
+    /* disable all suggestions, so annoying omg */
+    /*
+    "editor.parameterHints.enabled": false,
+    "editor.quickSuggestions": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    */
+    /**/
     "window.menuBarVisibility": "toggle",
     "explorer.confirmDelete": false,
     "files.autoSave": "afterDelay",
@@ -78,6 +87,5 @@
     "extensions.autoUpdate": false,
     "terminal.integrated.tabs.enabled": false,
     "workbench.colorTheme": "Monokai",
-    "editor.inlineSuggest.enabled": false,
     "editor.quickSuggestionsDelay": 100
 }

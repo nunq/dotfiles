@@ -55,6 +55,8 @@ xinput set-prop "$TOUCHPADID" "$TOUCH_TO_CLICK_PROP" 1 &
 xinput set-prop 9 "$NAT_SCROLLING_PROP" 0 &
 xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 1 &
 xinput set-prop "$TOUCHPADID" "$DISABLE_WHILE_TYPING_PROP" 0 &
+#disable screensaver
+xset s off
 #wallpaper
 ~/.scripts/fehbg
 #finally
