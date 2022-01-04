@@ -22,11 +22,11 @@ while :; do
       BATLABEL=""
       BATIND=""
       BAT="charged"
-    elif [ "$BAT" -le "14" -a "$STATUS" == "Discharging" ]; then
+    elif [ "$BAT" -le "12" -a "$STATUS" == "Discharging" ]; then
       BATLABEL=""
       BATIND=""
       BAT="charge!"
-      notify-send --urgency=critical -t 20000 "your laptop is about to die"
+      notify-send --urgency=critical -t 5000 "your laptop is about to die"
     fi
     if [ "$(pacmd list-sinks | grep -A 11 "index: $SINK" | grep 'muted:.*' | sed 's/\s//gi')" == "muted:yes" ]; then
       VOLLABEL=""
@@ -41,11 +41,16 @@ done &
 #autostart
 clipmenud &
 ssh-agent &
-redshift -l "$(curl -ks https://iplocation.com --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" | grep -oP '(?<=<td class="l..">).*?(?=<\/td>)' | tr '\n' ':' | sed 's/:$//')" || true &
-xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" &
 start-pulseaudio-x11 &
+/usr/bin/nextcloud --background &
 dunst &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & # polkit agent
+eval $(gnome-keyring-daemon --start) # keyring
+export SSH_AUTH_SOCK # https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
+xset s off #disable screensaver
+redshift -l "$(curl -ks https://iplocation.com --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" | grep -oP '(?<=<td class="l..">).*?(?=<\/td>)' | tr '\n' ':' | sed 's/:$//')" || true &
+xautolock -time 3 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 25 -notifier "notify-send --urgency=critical -t 5000 'suspending in 20s'" &
+echo off > ~/.cache/dwmespresso.txt # see ~/.scripts/espresso
 #enable touch to click & natural scrolling & enable touchpad while typing
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")
 TOUCH_TO_CLICK_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Tapping Enabled \(.*?\)" | sed "s/.*Tapping Enabled (//" | sed "s/)//")
@@ -55,8 +60,6 @@ xinput set-prop "$TOUCHPADID" "$TOUCH_TO_CLICK_PROP" 1 &
 xinput set-prop 9 "$NAT_SCROLLING_PROP" 0 &
 xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 1 &
 xinput set-prop "$TOUCHPADID" "$DISABLE_WHILE_TYPING_PROP" 0 &
-#disable screensaver
-xset s off
 #wallpaper
 ~/.scripts/fehbg
 #finally

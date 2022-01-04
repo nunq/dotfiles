@@ -1,19 +1,18 @@
 #!/bin/sh
-    
-case "$(echo -e "calculator\nnew wallpaper\npass\nscreenshot\nopen file\nsend to phone\n\nbt connect\nbt disconnect\ncupsnotify\nwifictrl\n\nsuspend\nhibernate\nreboot\nrlockd\nshutdown" | dmenu -i -p "utility menu:" -l 16 )" in
+set -x
+
+esprstate="$(cat ~/.cache/dwmespresso.txt)"
+
+case "$(echo -e "calculator\nnew wallpaper\npass\nopen file\n\nespresso [$esprstate]\nbt connect\nbt disconnect\n\nlock screen\nsuspend\nreboot\nshutdown\n" | dmenu -i -p "utility menu:" -l 16 )" in
         calculator) kitty bc -l ;;
         new\ wallpaper) $HOME/.scripts/fehbg ;;
         pass) $HOME/.scripts/passnosave ;;
-        screenshot) $HOME/.scripts/screenshot ;;
         open\ file) kitty $HOME/.scripts/search-and-open & ;;
-        send\ to\ phone) $HOME/.scripts/sendtophone.fish ;;
+        espresso\ \[$esprstate\]) $HOME/.scripts/espresso ;;
         bt\ connect) $HOME/.scripts/btmenu ;;
         bt\ disconnect) $HOME/.scripts/btmenu -d ;;
-        cupsnotify) $HOME/.scripts/cups-finished-printing-notifier ;;
-        wifictrl) kitty $HOME/.scripts/guidedconnman ;;
+        lock\ screen) exec slock ;;
         suspend) exec systemctl suspend ;;
-        hibernate) exec systemctl hibernate ;;
         reboot) exec systemctl reboot ;;
-        rlockd) $HOME/code/proj/remotelockd/rlockd -s;;
         shutdown) exec systemctl poweroff ;;
 esac

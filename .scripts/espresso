@@ -1,0 +1,14 @@
+#!/bin/bash
+set -eux -o pipefail
+[[ ! -e ~/.cache/dwmespresso.txt ]] && echo off > ~/.cache/dwmespresso.txt
+
+v="$(cat ~/.cache/dwmespresso.txt)"
+[[ -z "$v" ]] && echo "cachefile invalid. please delete." && exit 1
+
+if [ "$v" == "off" ]; then
+  xautolock -disable
+  echo on > ~/.cache/dwmespresso.txt
+elif [ "$v" == "on" ]; then
+  xautolock -enable
+  echo off > ~/.cache/dwmespresso.txt
+fi

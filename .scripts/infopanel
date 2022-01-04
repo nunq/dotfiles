@@ -1,0 +1,52 @@
+#!/bin/bash
+# weather is cached at ~/.cache/panelweathercached.txt
+
+function weather() {
+# pad weather info to longest row length, so that paste works
+# takes too long to do ad-hoc. refreshed every X minutes via cron
+  rawweather="$(curl -s "https://wttr.in/?0?F?T?A" | sed 's/report:/in/;s/, .*$//')"
+  readarray -t rweather <<< "$rawweather"
+  longest="$(wc -L <<< "$rawweather")"
+  fweather=""
+
+  # use last weather, if not net
+  [[ -z "$rawweather" ]] && exit 0
+
+  for row in "${rweather[@]}"; do
+
+    while [ $(wc -L <<< "$row") -lt $longest ]; do
+      row+=" "
+    done
+    fweather+="$row%"
+  done
+  echo "$fweather" | tr '%' '\n' | sed '$d' > ~/.cache/panelweathercached.txt
+
+  finalline=" "
+  while [ $(wc -L <<< "$finalline") -lt $longest ]; do
+    finalline+=" "
+  done
+  echo "$finalline" >> ~/.cache/panelweathercached.txt
+}
+
+function main() {
+  notif="Notifications%"
+
+  mapfile -t titles <<< "$(dunstctl history | jq -r ".data[][].summary.data" | head -n 6)"
+  mapfile -t bodies <<< "$(dunstctl history | jq -r ".data[][].body.data" | head -n 6)"
+
+  for (( i=0; i<6; i++ )); do
+    notif+=" * ${titles[i]}  ${bodies[i]}%"
+  done
+
+  paste -d '|' <(paste -d " " <(paste -d "" <(cal -n 2 -w | cut -c 1-3) <(cat <(cal | head -n 1) <( cal -n 2 -w | cut -c 4-23 | sed 1d | sed "0,/$(date +%d | sed -r 's/^0(.)/\1/')/s/$(date +%d | sed 's/^0/ /')/></"))) <(cal -n 2 -w | cut -c 25-48) | sed 's/   Mo/WK Mo/g') ~/.cache/panelweathercached.txt <(echo "$notif" | tr '%' '\n' | cut -c -50) | sed 's/|/  |  /g;s/^/  /g' | cat <(printf '\n') - | cat - <(printf '\n') | dmenu -sb "#222222" -l 10 # hex 222222 so that the selected line doesnt jump out
+}
+
+case $1 in
+  weather)
+    weather;;
+  run)
+    main;;
+  *)
+    echo "valid cli args are weather and run. weather should be called from cronjob." && exit 1;;
+esac
+

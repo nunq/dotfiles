@@ -1,4 +1,4 @@
 #!/bin/sh
 DISPLAY=:0
 notify-send -u critical -t 1500 "select area (ESC to quit)"
-maim -u -s ~/Downloads/maim-$(date "+%Y-%m-%d_%H:%M:%S").png
+maim -u -s ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
