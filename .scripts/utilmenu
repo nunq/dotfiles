@@ -3,16 +3,48 @@ set -x
 
 esprstate="$(cat ~/.cache/dwmespresso.txt)"
 
-case "$(echo -e "calculator\nnew wallpaper\npass\nopen file\n\nespresso [$esprstate]\nbt connect\nbt disconnect\n\nlock screen\nsuspend\nreboot\nshutdown\n" | dmenu -i -p "utility menu:" -l 16 )" in
-        calculator) kitty bc -l ;;
-        new\ wallpaper) $HOME/.scripts/fehbg ;;
-        pass) $HOME/.scripts/passnosave ;;
-        open\ file) kitty $HOME/.scripts/search-and-open & ;;
-        espresso\ \[$esprstate\]) $HOME/.scripts/espresso ;;
-        bt\ connect) $HOME/.scripts/btmenu ;;
-        bt\ disconnect) $HOME/.scripts/btmenu -d ;;
-        lock\ screen) exec slock ;;
-        suspend) exec systemctl suspend ;;
-        reboot) exec systemctl reboot ;;
-        shutdown) exec systemctl poweroff ;;
+case "$(echo -e "calculator\nnew wallpaper\npass\nopen file\n\nespresso [$esprstate]\nbluetoothctl\nextmonctl\n\nlock screen\nsuspend\nreboot\nshutdown\n" | dmenu -i -p "utility menu:" -l 16 )" in
+  calculator) kitty bc -l ;;
+  new\ wallpaper) $HOME/.scripts/fehbg ;;
+  pass) $HOME/.scripts/passnosave ;;
+  open\ file) kitty $HOME/.scripts/search-and-open & ;;
+  espresso\ \[$esprstate\]) $HOME/.scripts/espresso ;;
+  bluetoothctl)
+    case "$(echo -e "connect\ndisconnect" | dmenu -p "do what?")" in
+      connect)
+        $HOME/.scripts/btmenu ;;
+      disconnect)
+        $HOME/.scripts/btmenu -d ;;
+    esac ;;
+  extmonctl)
+    case "$(echo -e "right extend\nmirror this display\nleft extend\ndisconnect" | dmenu -p "do what?")" in
+      right\ extend)
+        $HOME/.scripts/extmon e right
+        case "$(echo -e "n\ny" | dmenu -p "screensharing?")" in
+          n);;
+          y) $HOME/.scripts/screensharing start ;;
+        esac ;;
+      mirror\ this\ display)
+        $HOME/.scripts/extmon m
+        case "$(echo -e "n\ny" | dmenu -p "screensharing?")" in
+          n);;
+          y) $HOME/.scripts/screensharing start ;;
+        esac ;;
+      left\ extend)
+        $HOME/.scripts/extmon e left
+        case "$(echo -e "n\ny" | dmenu -p "screensharing?")" in
+          n);;
+          y) $HOME/.scripts/screensharing start ;;
+        esac ;;
+      disconnect)
+        $HOME/.scripts/extmon d
+        case "$(echo -e "n\ny" | dmenu -p "did you run screensharing.sh?")" in
+          n);;
+          y) kitty $HOME/.scripts/screensharing stop ;;
+        esac ;;
+    esac ;;
+  lock\ screen) exec slock ;;
+  suspend) exec systemctl suspend ;;
+  reboot) exec systemctl reboot ;;
+  shutdown) exec systemctl poweroff ;;
 esac

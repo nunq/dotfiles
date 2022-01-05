@@ -98,7 +98,6 @@ iftop
 ijs
 imagemagick
 inetutils
-inkscape
 intel-media-driver
 intel-ucode
 iproute2
@@ -149,7 +148,6 @@ nextcloud-client
 nmap
 noto-fonts-cjk
 noto-fonts-emoji
-openshot
 openvpn
 orca
 otf-fira-code
@@ -176,7 +174,6 @@ python-nautilus
 python-pyserial
 python2-gimp
 qpdf
-qrencode
 ranger
 redshift-minimal
 renpy

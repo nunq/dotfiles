@@ -3,21 +3,18 @@
 # if audio doesn't work, try: pacmd list-cards
 
 switchaudio() {
-  read -rp "html audio: what thunderbolt port are you using (front|back)? front = closer to lenovo logo: " PORT
-  if [ "$PORT" == "front" ];then
-    sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo
-  elif [ "$PORT" == "back" ];then
-    sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:hdmi-stereo+input:analog-stereo
-  fi
+  case "$(echo -e "far\nnear" | dmenu -p "audio: what thunderbolt port are you using?")" in
+    far)
+    sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo ;;
+    near)
+    sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:hdmi-stereo+input:analog-stereo ;;
+  esac
 }
 
 case "$1" in
   m)
-    killall redshift || true
     mons -m
     switchaudio
-    echo "optimizing for screensharing"
-    ~/.scripts/screensharing start
     ;;
   e)
     if [ "$2" == "" ]; then
@@ -25,14 +22,10 @@ case "$1" in
     else
       SIDE="$2"
     fi
-    killall redshift || true
     mons -e "$SIDE"
     switchaudio
-    echo "optimizing for screensharing"
-    ~/.scripts/screensharing start
     ;;
   d)
-    ~/.scripts/screensharing stop
     mons -o
     sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:analog-stereo+input:analog-stereo
     ;;

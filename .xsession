@@ -44,11 +44,11 @@ ssh-agent &
 start-pulseaudio-x11 &
 /usr/bin/nextcloud --background &
 dunst &
-/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & # polkit agent
+#/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & # polkit agent
 eval $(gnome-keyring-daemon --start) # keyring
 export SSH_AUTH_SOCK # https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
 xset s off #disable screensaver
-redshift -l "$(curl -ks https://iplocation.com --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" | grep -oP '(?<=<td class="l..">).*?(?=<\/td>)' | tr '\n' ':' | sed 's/:$//')" || true &
+redshift  &
 xautolock -time 3 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 25 -notifier "notify-send --urgency=critical -t 5000 'suspending in 20s'" &
 echo off > ~/.cache/dwmespresso.txt # see ~/.scripts/espresso
 #enable touch to click & natural scrolling & enable touchpad while typing
