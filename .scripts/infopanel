@@ -31,8 +31,11 @@ function weather() {
 function main() {
   notif="Notifications%"
 
-  mapfile -t titles <<< "$(dunstctl history | jq -r ".data[][].summary.data" | head -n 6)"
-  mapfile -t bodies <<< "$(dunstctl history | jq -r ".data[][].body.data" | head -n 6)"
+  #mapfile -t titles <<< "$(timeout 0.3 dunstctl history | jq -r ".data[][].summary.data" | head -n 6)"
+  #mapfile -t bodies <<< "$(timeout 0.3 dunstctl history | jq -r ".data[][].body.data" | head -n 6)"
+  # jq is too slow
+  mapfile -t titles <<< "$(dunstctl history | grep -A2 '"summary" : {' | grep -oP '(?<="data" : ").*?(?="$)' | sed 's|\\||g' | head -n 6)"
+  mapfile -t bodies <<< "$(dunstctl history | grep -A2 '"body" : {' | grep -oP '(?<="data" : ).*?(?=$)' | sed 's|\\||g;s|^"||;s|"$||;s|%||g' | head -n 6)"
 
   for (( i=0; i<6; i++ )); do
     notif+=" * ${titles[i]}  ${bodies[i]}%"

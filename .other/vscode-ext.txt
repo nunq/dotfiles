@@ -1,9 +1,6 @@
 akamud.vscode-theme-onedark
 Gruntfuggly.todo-tree
 James-Yu.latex-workshop
-mads-hartmann.bash-ide-vscode
-ms-python.python
-ms-vscode.cpptools
 PKief.material-icon-theme
 redhat.java
 vscjava.vscode-java-debug

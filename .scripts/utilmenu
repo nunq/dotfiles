@@ -1,14 +1,14 @@
 #!/bin/sh
-set -x
-
 esprstate="$(cat ~/.cache/dwmespresso.txt)"
+nsyncstate="$(cat ~/.cache/nsynctoggle.txt)"
 
-case "$(echo -e "calculator\nnew wallpaper\npass\nopen file\n\nespresso [$esprstate]\nbluetoothctl\nextmonctl\n\nlock screen\nsuspend\nreboot\nshutdown\n" | dmenu -i -p "utility menu:" -l 16 )" in
-  calculator) kitty bc -l ;;
+case "$(echo -e "calculator\nnew wallpaper\npass store\nemoji picker\nespresso [$esprstate]\ndont disturb [$nsyncstate]\nbluetoothctl\nextmonctl\n--------------\nlock screen\nsuspend\nreboot\nshutdown\n" | dmenu -i -p "utility menu:" -l 14 )" in
+  calculator) kitty bc -l $HOME/.config/bcrc ;;
   new\ wallpaper) $HOME/.scripts/fehbg ;;
-  pass) $HOME/.scripts/passnosave ;;
-  open\ file) kitty $HOME/.scripts/search-and-open & ;;
+  pass\ store) $HOME/.scripts/passnosave ;;
+  emoji\ picker) $HOME/.scripts/emojipicker ;;
   espresso\ \[$esprstate\]) $HOME/.scripts/espresso ;;
+  dont\ disturb\ \[$nsyncstate\]) $HOME/.scripts/nsynctoggle ;;
   bluetoothctl)
     case "$(echo -e "connect\ndisconnect" | dmenu -p "do what?")" in
       connect)

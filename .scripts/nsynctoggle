@@ -1,0 +1,14 @@
+#!/bin/bash
+set -eux -o pipefail
+[[ ! -e ~/.cache/nsynctoggle.txt ]] && echo off > ~/.cache/nsynctoggle.txt
+
+v="$(cat ~/.cache/nsynctoggle.txt)"
+[[ -z "$v" ]] && echo "cachefile invalid. please delete." && exit 1
+
+if [ "$v" == "off" ]; then # is do not disturb on?
+  systemctl --user stop an2linuxserver.service
+  echo on > ~/.cache/nsynctoggle.txt
+elif [ "$v" == "on" ]; then
+  systemctl --user start an2linuxserver.service
+  echo off > ~/.cache/nsynctoggle.txt
+fi

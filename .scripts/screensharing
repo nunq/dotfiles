@@ -4,15 +4,14 @@ case "$1" in
   start)
     echo "stopping services..."
     killall redshift || true
-    killall dunst || true
+    dunstctl set-paused true
     echo "disabling cronjobs..."
-    crontab -l > ~/.cronbackup
-    crontab -r
+    crontab -l > ~/.cronbackup && crontab -r
     ;;
   stop)
     echo "restarting services..."
     redshift </dev/null &>/dev/null &
-    dunst </dev/null &>/dev/null &
+    dunstctl set-paused false
     xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" </dev/null &>/dev/null &
     echo "sudo for re-installing crontab..."
     cat ~/.cronbackup

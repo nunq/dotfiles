@@ -4,7 +4,6 @@ alsa-utils
 an2linuxserver-git
 arduino
 asciiquarium
-audacity
 autoconf
 automake
 bash
@@ -24,6 +23,7 @@ chrome-gnome-shell
 clipmenu
 clipnotify
 code
+colorpicker
 coreutils
 cronie
 cryptsetup
@@ -45,7 +45,6 @@ feh
 file
 file-roller
 filesystem
-filezilla
 findutils
 firefox
 fish
@@ -64,14 +63,12 @@ gimp-plugin-resynthesizer
 git
 glibc
 gnome-backgrounds
-gnome-calculator
 gnome-color-manager
 gnome-control-center
 gnome-disk-utility
 gnome-keyring
 gnome-menus
 gnome-power-manager
-gnome-screenshot
 gnome-session
 gnome-settings-daemon
 gnome-shell
@@ -79,7 +76,6 @@ gnome-shell-extensions
 gnome-themes-extra
 gnome-tweaks
 gnome-user-share
-gnome-weather
 graphviz
 grep
 grilo-plugins
