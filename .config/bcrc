@@ -8,7 +8,7 @@ define mod(x,y) {
   return ret
 }
 # from https://raw.githubusercontent.com/idealvin/bc/master/bcrc
-scale=6;
+scale=10;
 pi=4*a(1);
 e=e(1);
 

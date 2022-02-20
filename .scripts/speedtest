@@ -1,0 +1,8 @@
+#/bin/bash
+
+FILE="https://speed.hetzner.de/100MB.bin"
+
+ping -n -W 3 -c 3 1.1.1.1 > /dev/null 2>&1 && echo "net works"
+
+bps=$(curl -o /dev/null -w '%{speed_download}\n' --range 0-52428800 -# $FILE)
+echo "download "$(echo "scale=2; $bps/125000" | bc)"mbps"

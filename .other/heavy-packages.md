@@ -15,4 +15,7 @@
 ## by dependency
 * biber (depends on 110 perl packages, 26.2 MiB)
 
+## uninstalled (yay -Rsn)
+* biber
+* texlive-bibtexextra texlive-bin texlive-core texlive-fontsextra texlive-latexextra texlive-pictures texlive-science
 

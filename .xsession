@@ -22,7 +22,7 @@ while :; do
       BATLABEL=""
       BATIND=""
       BAT="charged"
-    elif [ "$BAT" -le "12" -a "$STATUS" == "Discharging" ]; then
+    elif [ "$BAT" -le "9" -a "$STATUS" == "Discharging" ]; then
       BATLABEL=""
       BATIND=""
       BAT="charge!"

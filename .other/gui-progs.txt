@@ -1,0 +1,18 @@
+nautilus
+kitty (nvim, fish)
+evince
+firefox
+vscode
+signal
+element
+gimp
+nm-connection-editor
+mpv
+minecraft
+tor browser
+geogebra
+pavucontrol
+renpy
+spotify
+technic launcher
+burpsuite

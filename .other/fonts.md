@@ -1,5 +1,7 @@
 # fira code issues
 
+**JAN 2022 UPDATE: ttf-fira-code version 6.2-1 seems to work fine, guess they fixed it.**
+
 the currently available packages in the offical arch repos and the aur are borked.
 at least for dmenu and dwm.
 

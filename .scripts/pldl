@@ -7,6 +7,9 @@ set -eo pipefail
 DIR="$HOME/Music/$3" #without slash at the end!
 rm /tmp/musicdl-* > /dev/null 2>&1 || true
 
+shopt -s expand_aliases
+alias youtube-dl="yt-dlp"
+
 setData() {
     vtitle=$(youtube-dl -e "$1")
     if [[ ! $(grep -P " [-\—\–\‒\:\~\-].*" <<< "$vtitle") ]]; then
