@@ -1,6 +1,8 @@
 nautilus
-kitty (nvim, fish)
+kitty
 evince
+eog
+geary
 firefox
 vscode
 signal
@@ -12,7 +14,4 @@ minecraft
 tor browser
 geogebra
 pavucontrol
-renpy
 spotify
-technic launcher
-burpsuite

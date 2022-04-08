@@ -7,8 +7,8 @@ automake
 bash
 bash-completion
 bc
-bind
 binutils
+bison
 bluez
 bluez-utils
 bolt
@@ -19,6 +19,7 @@ bzip2
 clipmenu
 clipnotify
 code
+colorpicker
 coreutils
 cronie
 cryptsetup
@@ -50,7 +51,6 @@ gcc-libs
 gdb
 gdm
 geary
-geckodriver
 geogebra
 gettext
 gimp
@@ -95,10 +95,10 @@ intel-ucode
 iproute2
 iputils
 irssi
-jdk-openjdk
 joplin-desktop
 jpegoptim
 jq
+jre11-openjdk
 kitty
 less
 liblouis
@@ -124,7 +124,7 @@ make
 man-db
 man-pages
 mdadm
-megatools
+megatools-git
 meld
 menulibre
 minecraft-launcher
@@ -140,6 +140,8 @@ nextcloud-client
 nmap
 noto-fonts-cjk
 noto-fonts-emoji
+openrct2
+openttd
 openvpn
 orca
 p7zip
@@ -168,6 +170,7 @@ python2-gimp
 qpdf
 redshift-minimal
 rsync
+sc-im
 seahorse
 sed
 shadow
@@ -176,7 +179,9 @@ slock
 smartmontools
 spotify
 sqlcipher
+sqlitebrowser
 sshpass
+steam
 steghide
 strace
 sudo
@@ -187,6 +192,7 @@ tcpdump
 texinfo
 tlp
 tor-browser
+traceroute
 tracker
 tracker-miners
 tracker3
@@ -200,10 +206,12 @@ unzip
 upower
 usbutils
 util-linux
-valgrind
 webp-pixbuf-loader
 wget
 which
+wine
+wine-mono
+winetricks
 wipe
 wpa_supplicant
 xautolock

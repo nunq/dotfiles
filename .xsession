@@ -36,6 +36,7 @@ while :; do
       xbacklight -set "1.1"
     fi
     xsetroot -name " $(date +%H:%M) | $(date +%a | tr '[A-Z]' '[a-z]') $(date +%d/%m/%Y) | net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND "
+    xsetroot -solid "$(date +#%H%M%S)"
     sleep 5
 done &
 #autostart
@@ -61,6 +62,6 @@ xinput set-prop 9 "$NAT_SCROLLING_PROP" 0 &
 xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 1 &
 xinput set-prop "$TOUCHPADID" "$DISABLE_WHILE_TYPING_PROP" 0 &
 #wallpaper
-~/.scripts/fehbg
+#~/.scripts/fehbg
 #finally
 exec ~/.scripts/startdwm
