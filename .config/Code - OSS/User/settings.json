@@ -42,15 +42,15 @@
             "gutterIcon": true
         },
         "FIXME": {
-            "foreground": "yellow",
-            "background": "black",
-            "iconColour": "yellow",
+            "foreground": "#ffff00",
+            "background": "#000",
+            "iconColour": "#ffff00",
             "gutterIcon": true
         },
         "BUG": {
-            "foreground": "red",
+            "foreground": "#ff0000",
             "background": "#fff",
-            "iconColour": "red",
+            "iconColour": "#ff0000",
             "gutterIcon": true,
             "opacity": 100
         },
@@ -77,7 +77,7 @@
     "latex-workshop.message.badbox.show": false,
     "material-icon-theme.opacity": 0,
     "security.workspace.trust.enabled": false,
-    "java.jdt.ls.java.home": "/usr/lib/jvm/java-11-openjdk/",
+    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk/",
     "files.exclude": {
         "**/.classpath": true,
         "**/.project": true,
