@@ -4,7 +4,7 @@ nsyncstate="$(cat ~/.cache/nsynctoggle.txt)"
 
 case "$(echo -e "calculator\nnew wallpaper\npass store\nemoji picker\nespresso [$esprstate]\ndont disturb [$nsyncstate]\nbluetoothctl\nextmonctl\n--------------\nlock screen\nsuspend\nreboot\nshutdown\n" | dmenu -i -p "utility menu:" -l 14 )" in
   calculator) kitty bc -l $HOME/.config/bcrc ;;
-  new\ wallpaper) $HOME/.scripts/fehbg ;;
+  new\ wallpaper) $HOME/.scripts/wallpaper ;;
   pass\ store) $HOME/.scripts/passnosave ;;
   emoji\ picker) $HOME/.scripts/emojipicker ;;
   espresso\ \[$esprstate\]) $HOME/.scripts/espresso ;;

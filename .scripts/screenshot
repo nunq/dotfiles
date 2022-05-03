@@ -1,8 +1,10 @@
 #!/bin/bash
 DISPLAY=:0
 if [ "$1" == "area" ]; then
-  notify-send -u critical -t 1500 "select area (ESC to quit)"
-  maim -u -s ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
+  #notify-send -u critical -t 1500 "select area (ESC to quit)"
+  #maim -u -s ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
+  import -window root -crop $(slop -f %g) ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
 elif [ "$1" == "all" ]; then
-  maim -u ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
+  #maim -u ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
+  import -window root ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
 fi

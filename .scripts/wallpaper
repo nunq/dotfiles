@@ -1,0 +1,10 @@
+#!/bin/sh
+# depends on imagemagick
+if [ -z "$1" ]; then
+  #feh --bg-fill --randomize --no-fehbg ~/Documents/media/wallpapers/w*
+  # randomized
+  display -window root -gravity center -crop 16:9 "$(ls ~/Documents/media/wallpapers/w_* | shuf -n 1)"
+else
+  #feh --bg-fill --no-fehbg "$1"
+  display -window root -gravity center -crop 16:9 "$1"
+fi

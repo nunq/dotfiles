@@ -1,12 +1,13 @@
-colorscheme kuroi
+colorscheme monokai-grey
 nnoremap <esc> :noh<return><esc>
 nnoremap <M-d> <Nop>
 nnoremap <M-s> <Nop>
 map qq <Nop>
 
-command C :write | !~/.scripts/compile %
-command Lenv !zathura (dirname %)/(basename % | sed 's/\.tex//').pdf & 
 command W :write
+command Q :quit
+command Wq :write | :quit
+command WQ :write | :quit
 
 set autoread
 set backspace=indent,eol,start

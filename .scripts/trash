@@ -1,0 +1,3 @@
+#!/bin/bash
+TRASHDIR="/home/nils/.local/share/Trash/files/"
+mv -v $(readlink -fn "$1") "$TRASHDIR"

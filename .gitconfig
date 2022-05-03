@@ -16,4 +16,12 @@
 [pull]
 	rebase = false
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[alias]
+  a = add
+  aa = add -A
+  dm = diff main
+  dma = diff master
+  p = push
+  s = status
+  subup = submodule foreach git pull
