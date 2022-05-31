@@ -4,6 +4,8 @@ nnoremap <M-d> <Nop>
 nnoremap <M-s> <Nop>
 map qq <Nop>
 
+tnoremap <Esc> <C-\><C-n> " exit terminal mode with esc
+
 command W :write
 command Q :quit
 command Wq :write | :quit
@@ -34,7 +36,13 @@ set tabstop=2
 set title
 set ttyfast
 set undolevels=100
+set history=500
+set ruler
+set background=dark
+set ai
+set si
 syntax on
+filetype on
 
 set statusline=\ %F
 set statusline+=\ %h

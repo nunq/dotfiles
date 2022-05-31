@@ -1,0 +1,19 @@
+# https://wiki.archlinux.org/title/Systemd-networkd
+[Match]
+Name=wlan0
+
+[Network]
+DNS=127.0.0.1
+Domains=~.
+IgnoreCarrierLoss=3s
+DHCP=ipv4
+LinkLocalAddressing=ipv4
+IPv6AcceptRA=no
+
+[DHCPv4]
+# dont use dns servers advertised by dhcp server (router)
+UseDNS=no
+
+[DHCPv6]
+# dont use dns servers advertised by dhcp server (router)
+UseDNS=no

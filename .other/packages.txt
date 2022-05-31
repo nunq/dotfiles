@@ -1,12 +1,12 @@
 acpi
 alsa-utils
-an2linuxserver-git
 asciiquarium
 autoconf
 automake
 bash
 bash-completion
 bc
+bind
 binutils
 bison
 bluez
@@ -26,11 +26,9 @@ cryptsetup
 curl
 device-mapper
 dia
-dnscrypt-proxy
 downgrade
 dunst
 e2fsprogs
-element-desktop
 eog
 evince
 exfat-utils
@@ -46,6 +44,7 @@ gawk
 gcc
 gcc-libs
 geary
+geogebra
 gettext
 gimp
 gimp-plugin-resynthesizer
@@ -64,7 +63,6 @@ gvfs-mtp
 gvfs-nfs
 gzip
 htop
-hugo
 hunspell-de
 iftop
 ijs
@@ -76,6 +74,7 @@ intel-ucode
 iproute2
 iputils
 irssi
+iwd
 jdk17-openjdk
 joplin-desktop
 jq
@@ -103,14 +102,12 @@ man-db
 man-pages
 mdadm
 megatools-git
-meld
 minecraft-launcher
 mons
 mpv
 nautilus
 ncdu
 neovim
-networkmanager
 nextcloud-client
 nmap
 noto-fonts-cjk
@@ -123,7 +120,6 @@ paperkey
 pass
 pass-update
 patch
-pavucontrol
 pciutils
 pdfgrep
 perl

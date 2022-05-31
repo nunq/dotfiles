@@ -1,0 +1,14 @@
+# https://wiki.archlinux.org/title/Systemd-networkd
+[Match]
+Name=wlan0
+SSID="WIFIonICE" "WIFI@DB" "AO Free WIFI"
+
+[Network]
+IgnoreCarrierLoss=3s
+DHCP=yes
+
+[DHCPv4]
+UseDNS=yes
+
+[DHCPv6]
+UseDNS=yes

@@ -36,7 +36,7 @@ while :; do
       xbacklight -set "1.1"
     fi
     xsetroot -name " $(date +%H:%M) | $(date +%a | tr '[A-Z]' '[a-z]') $(date +%d/%m/%Y) | net:$NETSIGNAL% $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND "
-    xsetroot -solid "$(date +#%H%M%S)"
+    #xsetroot -solid "$(date +#%H%M%S)"
     sleep 5
 done &
 #autostart
@@ -50,7 +50,7 @@ eval $(gnome-keyring-daemon --start) # keyring
 export SSH_AUTH_SOCK # https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
 xset s off #disable screensaver
 redshift  &
-xautolock -time 3 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 25 -notifier "notify-send --urgency=critical -t 5000 'suspending in 20s'" &
+xautolock -time 3 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 1; systemctl suspend" -detectsleep -notify 25 -notifier "notify-send --urgency=critical -t 5000 'suspending in 20s'" &
 echo off > ~/.cache/dwmespresso.txt # see ~/.scripts/espresso
 #enable touch to click & natural scrolling & enable touchpad while typing
 TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")
@@ -61,7 +61,10 @@ xinput set-prop "$TOUCHPADID" "$TOUCH_TO_CLICK_PROP" 1 &
 xinput set-prop 9 "$NAT_SCROLLING_PROP" 0 &
 xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 1 &
 xinput set-prop "$TOUCHPADID" "$DISABLE_WHILE_TYPING_PROP" 0 &
+#init dnd state
+echo off > ~/.cache/nsynctoggle.txt
 #wallpaper
 #~/.scripts/fehbg
+xsetroot -solid "$(shuf -n 1 ~/.config/bgcolors)"
 #finally
 exec ~/.scripts/startdwm

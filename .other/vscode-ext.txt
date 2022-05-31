@@ -3,9 +3,4 @@ espressif.esp-idf-extension
 Gruntfuggly.todo-tree
 James-Yu.latex-workshop
 PKief.material-icon-theme
-redhat.java
-vscjava.vscode-java-debug
-vscjava.vscode-java-dependency
-vscjava.vscode-java-pack
-vscjava.vscode-java-test
 vscodevim.vim
