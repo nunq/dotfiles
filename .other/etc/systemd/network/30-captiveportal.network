@@ -1,11 +1,18 @@
 # https://wiki.archlinux.org/title/Systemd-networkd
 [Match]
 Name=wlan0
-SSID="WIFIonICE" "WIFI@DB" "AO Free WIFI"
+SSID="WIFI@DB" "AO Free WIFI"
 
 [Network]
 IgnoreCarrierLoss=3s
 DHCP=yes
+# because the dns advertised by routers is not encrypted
+DNSOverTLS=no
+# i dont expect hotspots to support dnssec
+DNSSEC=no
+# reset options set in global systemd-resolved conf
+DNS=
+Domains=~.
 
 [DHCPv4]
 UseDNS=yes

@@ -1,6 +1,5 @@
 acpi
 alsa-utils
-asciiquarium
 autoconf
 automake
 bash
@@ -46,6 +45,7 @@ gcc-libs
 geary
 geogebra
 gettext
+ghc
 gimp
 gimp-plugin-resynthesizer
 git
@@ -109,6 +109,7 @@ nautilus
 ncdu
 neovim
 nextcloud-client
+ngrep
 nmap
 noto-fonts-cjk
 noto-fonts-emoji

@@ -1,6 +1,7 @@
 # https://wiki.archlinux.org/title/Systemd-networkd
 [Match]
 Name=wlan0
+SSID=! "WIFI@DB" "AO Free WIFI"
 
 [Network]
 DNS=127.0.0.1

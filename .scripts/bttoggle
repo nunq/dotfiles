@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e -o pipefail
+case $1 in
+  on)
+  echo "enabling bluetooth (requires sudo) ..."
+  sudo systemctl start bluetooth
+  sudo rfkill unblock bluetooth
+  ;;
+  off)
+  echo "disabling bluetooth (requires sudo) ..."
+  sudo systemctl stop bluetooth
+  sudo systemctl disable bluetooth
+  sudo rfkill block bluetooth
+  ;;
+  *) echo "./bttoggle (on|off)"
+  ;;
+esac
