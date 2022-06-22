@@ -47,3 +47,5 @@ case "$(echo -e "calculator\nnew wallpaper\npass store\nemoji picker\nespresso [
   reboot) exec systemctl reboot ;;
   shutdown) exec systemctl poweroff ;;
 esac
+
+$HOME/.xsession barupdate

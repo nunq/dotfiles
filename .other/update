@@ -1,4 +1,5 @@
 #!/bin/bash
+yay -Qeq > ~/.other/packages.txt
 cd /etc
 sudo cp systemd/resolved.conf ~/.other/etc/systemd/resolved.conf
 sudo cp systemd/network/* ~/.other/etc/systemd/network/

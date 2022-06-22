@@ -43,7 +43,6 @@ gawk
 gcc
 gcc-libs
 geary
-geogebra
 gettext
 ghc
 gimp
@@ -85,7 +84,6 @@ libnotify
 libraqm
 libtool
 libva-intel-driver
-libva-utils
 libvdpau-va-gl
 libxft-bgra
 libxslt
@@ -108,6 +106,7 @@ mpv
 nautilus
 ncdu
 neovim
+networkd-dispatcher
 nextcloud-client
 ngrep
 nmap
@@ -150,6 +149,7 @@ steam
 steghide
 strace
 sudo
+swi-prolog
 sysfsutils
 systemd
 tar
@@ -175,7 +175,7 @@ wine
 wine-mono
 winetricks
 wipe
-wpa_supplicant
+wireless_tools
 xautolock
 xdg-user-dirs-gtk
 xdg-utils

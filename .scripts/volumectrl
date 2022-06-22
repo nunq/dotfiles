@@ -9,3 +9,5 @@ elif [ "$1" == "down" ]; then
 elif [ "$1" == "togglemute" ]; then
   pactl set-sink-mute "$SINK" toggle
 fi
+
+~/.xsession barupdate
