@@ -20,8 +20,10 @@
 [alias]
   a = add
   aa = add -A
+  ap = add --patch
   dm = diff main
   dma = diff master
+  ds = diff --staged
   p = push
   s = status
   subup = submodule foreach git pull
