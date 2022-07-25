@@ -1,6 +1,0 @@
-akamud.vscode-theme-onedark
-espressif.esp-idf-extension
-Gruntfuggly.todo-tree
-James-Yu.latex-workshop
-PKief.material-icon-theme
-vscodevim.vim

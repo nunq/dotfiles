@@ -20,10 +20,14 @@
 [alias]
   a = add
   aa = add -A
+  au = add -u
   ap = add --patch
   dm = diff main
   dma = diff master
+  dni = diff --no-index
   ds = diff --staged
   p = push
   s = status
+  co = checkout
+  c = commit
   subup = submodule foreach git pull

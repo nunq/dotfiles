@@ -12,7 +12,7 @@ case "$1" in
     echo "restarting services..."
     redshift </dev/null &>/dev/null &
     dunstctl set-paused false
-    xautolock -time 2 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 toggle; systemctl suspend" -detectsleep -notify 15 -notifier "notify-send --urgency=critical 'suspending in 15s'" </dev/null &>/dev/null &
+    xautolock -time 3 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 1; systemctl suspend" -detectsleep -notify 25 -notifier "notify-send --urgency=critical -t 5000 'suspending in 20s'" &
     echo "sudo for re-installing crontab..."
     cat ~/.cronbackup
     sudo mv ~/.cronbackup /var/spool/cron/nils

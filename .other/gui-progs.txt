@@ -4,14 +4,9 @@ evince
 eog
 geary
 firefox
-vscode
-signal
-element
+signal-desktop
 gimp
-nm-connection-editor
-mpv
 minecraft
-tor browser
+tor-browser
 geogebra
-pavucontrol
 spotify

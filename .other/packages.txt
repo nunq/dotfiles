@@ -1,7 +1,6 @@
 acpi
+activitywatch-bin
 alsa-utils
-autoconf
-automake
 bash
 bash-completion
 bc
@@ -10,21 +9,19 @@ binutils
 bison
 bluez
 bluez-utils
-bolt
 borg
 btrfs-progs
 busybox
 bzip2
+chromium
 clipmenu
 clipnotify
-code
 colorpicker
 coreutils
 cronie
 cryptsetup
 curl
 device-mapper
-dia
 downgrade
 dunst
 e2fsprogs
@@ -32,6 +29,7 @@ eog
 evince
 exfat-utils
 fakeroot
+fdupes
 file
 file-roller
 filesystem
@@ -43,11 +41,13 @@ gawk
 gcc
 gcc-libs
 geary
+geogebra
 gettext
 ghc
 gimp
 gimp-plugin-resynthesizer
 git
+git-filter-repo
 glibc
 gnome-keyring
 gnome-themes-extra
@@ -67,7 +67,6 @@ iftop
 ijs
 imagemagick
 inetutils
-innoextract
 intel-media-driver
 intel-ucode
 iproute2
@@ -76,6 +75,7 @@ irssi
 iwd
 jdk17-openjdk
 joplin-desktop
+jpegoptim
 jq
 kitty
 less
@@ -108,8 +108,8 @@ ncdu
 neovim
 networkd-dispatcher
 nextcloud-client
-ngrep
 nmap
+nodejs
 noto-fonts-cjk
 noto-fonts-emoji
 openrct2
@@ -123,7 +123,6 @@ patch
 pciutils
 pdfgrep
 perl
-picocom
 pkgconf
 polkit-gnome
 procps-ng
@@ -133,7 +132,6 @@ pulseaudio-bluetooth
 pulsemixer
 pwgen
 python-nautilus
-python-pyserial
 python2-gimp
 redshift-minimal
 rsync
@@ -149,7 +147,6 @@ steam
 steghide
 strace
 sudo
-swi-prolog
 sysfsutils
 systemd
 tar
