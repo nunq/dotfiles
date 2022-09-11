@@ -180,10 +180,10 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/local/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/chromium
+    browser = /usr/bin/firefox
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -237,7 +237,7 @@
     # * close_current: Close current notification.
     # * close_all: Close all notifications.
     mouse_left_click = close_current
-    mouse_middle_click = do_action
+    mouse_middle_click = open_url, do_action
     mouse_right_click = close_all
 
 # Experimental features that may or may not work correctly. Do not expect them

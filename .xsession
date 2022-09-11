@@ -49,11 +49,6 @@ startup() {
   clipmenud &
   ssh-agent &
   networkd-dispatcher &
-  # activity watcher
-  aw-server &
-  aw-watcher-afk &
-  aw-watcher-window &
-  # end activity watcher
   start-pulseaudio-x11 &
   /usr/bin/nextcloud --background &
   dunst &

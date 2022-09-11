@@ -1,12 +1,9 @@
-acpi
-activitywatch-bin
 alsa-utils
 bash
 bash-completion
 bc
 bind
 binutils
-bison
 bluez
 bluez-utils
 borg
@@ -30,20 +27,19 @@ evince
 exfat-utils
 fakeroot
 fdupes
+ffmpegthumbnailer
 file
 file-roller
 filesystem
 findutils
 firefox
 fish
-flex
 gawk
 gcc
 gcc-libs
 geary
 geogebra
 gettext
-ghc
 gimp
 gimp-plugin-resynthesizer
 git
@@ -54,6 +50,7 @@ gnome-themes-extra
 graphviz
 grep
 groff
+gst-plugins-ugly
 gvfs
 gvfs-goa
 gvfs-google
@@ -84,6 +81,7 @@ libnotify
 libraqm
 libtool
 libva-intel-driver
+libva-utils
 libvdpau-va-gl
 libxft-bgra
 libxslt
@@ -123,9 +121,9 @@ patch
 pciutils
 pdfgrep
 perl
+pidgin
 pkgconf
 polkit-gnome
-procps-ng
 psmisc
 pulseaudio-alsa
 pulseaudio-bluetooth
@@ -168,9 +166,6 @@ valgrind
 webp-pixbuf-loader
 wget
 which
-wine
-wine-mono
-winetricks
 wipe
 wireless_tools
 xautolock
@@ -208,3 +203,4 @@ xorgproto
 yay
 yt-dlp
 zip
+zoom

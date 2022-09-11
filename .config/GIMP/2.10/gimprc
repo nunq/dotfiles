@@ -70,7 +70,7 @@
     (feather no)
     (feather-radius 10)
     (method line)
-    (width 10)
+    (width 5)
     (unit pixels)
     (cap-style butt)
     (join-style miter)
