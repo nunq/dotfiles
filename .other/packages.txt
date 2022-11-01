@@ -19,6 +19,7 @@ cronie
 cryptsetup
 curl
 device-mapper
+diffpdf
 downgrade
 dunst
 e2fsprogs
@@ -38,10 +39,10 @@ gawk
 gcc
 gcc-libs
 geary
+geckodriver
 geogebra
 gettext
 gimp
-gimp-plugin-resynthesizer
 git
 git-filter-repo
 glibc
@@ -83,7 +84,7 @@ libtool
 libva-intel-driver
 libva-utils
 libvdpau-va-gl
-libxft-bgra
+libxft
 libxslt
 licenses
 linux
@@ -110,6 +111,7 @@ nmap
 nodejs
 noto-fonts-cjk
 noto-fonts-emoji
+openconnect
 openrct2
 openvpn
 p7zip
@@ -129,8 +131,9 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 pulsemixer
 pwgen
+python-flask
 python-nautilus
-python2-gimp
+python-pip
 redshift-minimal
 rsync
 seahorse
@@ -163,6 +166,7 @@ upower
 usbutils
 util-linux
 valgrind
+wavemon
 webp-pixbuf-loader
 wget
 which
@@ -203,4 +207,3 @@ xorgproto
 yay
 yt-dlp
 zip
-zoom

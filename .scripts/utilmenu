@@ -16,7 +16,13 @@ case "$(echo -e "calculator\nnew wallpaper\npass store\nemoji picker\nespresso [
         $HOME/.scripts/btmenu -d ;;
     esac ;;
   monitors)
-    case "$(echo -e "right extend\nmirror this display\nleft extend\ndisconnect" | dmenu -p "do what?")" in
+    case "$(echo -e "top extend\nright extend\nmirror this display\ndisconnect" | dmenu -p "do what?")" in
+      top\ extend)
+        $HOME/.scripts/extmon e top
+        case "$(echo -e "n\ny" | dmenu -p "screensharing?")" in
+          n);;
+          y) $HOME/.scripts/screensharing start ;;
+        esac ;;
       right\ extend)
         $HOME/.scripts/extmon e right
         case "$(echo -e "n\ny" | dmenu -p "screensharing?")" in
@@ -25,12 +31,6 @@ case "$(echo -e "calculator\nnew wallpaper\npass store\nemoji picker\nespresso [
         esac ;;
       mirror\ this\ display)
         $HOME/.scripts/extmon m
-        case "$(echo -e "n\ny" | dmenu -p "screensharing?")" in
-          n);;
-          y) $HOME/.scripts/screensharing start ;;
-        esac ;;
-      left\ extend)
-        $HOME/.scripts/extmon e left
         case "$(echo -e "n\ny" | dmenu -p "screensharing?")" in
           n);;
           y) $HOME/.scripts/screensharing start ;;

@@ -18,11 +18,9 @@ case "$1" in
     ;;
   e)
     if [ "$2" == "" ]; then
-      SIDE="right"
-    else
-      SIDE="$2"
+      exit 1
     fi
-    mons -e "$SIDE"
+    mons -e "$2"
     switchaudio
     ;;
   d)

@@ -1,53 +1,87 @@
 colorscheme monokai-grey
-nnoremap <esc> :noh<return><esc>
+
+" inspiration:
+" https://stevelosh.com/blog/2010/09/coming-home-to-vim/#s5-vim-s-feeling
+" http://www.viemu.com/a-why-vi-vim.html
+
+nnoremap <esc> :noh<return><esc> " clear out search highlighting
 nnoremap <M-d> <Nop>
 nnoremap <M-s> <Nop>
 map qq <Nop>
+nnoremap / /\v
+vnoremap / /\v
+
+nnoremap <tab> % " make tab match braces, move faster
+vnoremap <tab> %
 
 tnoremap <Esc> <C-\><C-n> " exit terminal mode with esc
+
+inoremap <F1> <ESC> " no help on F1
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
 
 command W :write
 command Q :quit
 command Wq :write | :quit
 command WQ :write | :quit
 
-set autoread
-set backspace=indent,eol,start
-set clipboard=unnamedplus
-set cursorline
-set encoding=utf-8
-set expandtab
-set hlsearch
-set ignorecase
-set incsearch
-set laststatus=2
-set magic
-set mouse=a
 set nocompatible
-set number
-set scrolloff=10
-set shiftwidth=2
-set showmatch
-set smartcase
-set smartindent
-set smarttab
-set softtabstop=2
-set tabstop=2
-set title
-set ttyfast
-set undolevels=100
-set history=500
-set ruler
-set background=dark
-set ai
-set si
 syntax on
 filetype on
+set encoding=utf-8
+let mapleader=","
 
+set autoread " auto re-read file when modified
+set backspace=indent,eol,start
+set clipboard=unnamedplus " xorg ctrl+v clipboard
+set cursorline " mark current cursor line
+set ruler " cursor position
+set title " sets window title
+set undolevels=100
+set history=500
+set background=dark
+set mouse=a " enable mouse in all modes
+set number " show line numbers
+set scrolloff=10 " number of margin scroll lines
+set belloff=all " disable bell
+
+" search and replace
+set hlsearch " highlights all search matches
+set ignorecase " ignore case in search
+set smartcase " override ignorecase when search contains uppercase chars
+set incsearch " start search as soon as characters are typed
+set magic " enable more regex special chars
+set showmatch " show matching braces
+set gdefault " /g replace as default
+
+" tabs and indents
+set smartindent " works for c-like programs
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2 " all need to be the same
+set expandtab " expand to spaces
+
+" statusline
+set laststatus=2
 set statusline=\ %F
-set statusline+=\ %h
-set statusline+=%m
-set statusline+=%r
+set statusline+=\ %h " help buffer flag
+set statusline+=%m " modified flag
+set statusline+=%r " read-only flag
 set statusline+=%=
-set statusline+=line\ %l\ of\ %L
-set statusline+=\ ≈\ %P
+set statusline+=line\ %l:%c
+set statusline+=\ of\ %L
+set statusline+=\ %p%%\ 
+
+" learn proper movement
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+"set colorcolumn=85 " mark too long lines
+set relativenumber
