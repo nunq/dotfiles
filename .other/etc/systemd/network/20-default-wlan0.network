@@ -4,9 +4,9 @@ Name=wlan0
 SSID=! "WIFI@DB" "AO Free WIFI"
 
 [Network]
-DNS=127.0.0.1
-Domains=~.
-IgnoreCarrierLoss=3s
+#DNS=127.0.0.1
+#Domains=~.
+IgnoreCarrierLoss=5s
 DHCP=ipv4
 LinkLocalAddressing=ipv4
 IPv6AcceptRA=no

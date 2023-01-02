@@ -31,7 +31,6 @@ filetype on
 set encoding=utf-8
 let mapleader=","
 
-set autoread " auto re-read file when modified
 set backspace=indent,eol,start
 set clipboard=unnamedplus " xorg ctrl+v clipboard
 set cursorline " mark current cursor line
@@ -44,6 +43,8 @@ set mouse=a " enable mouse in all modes
 set number " show line numbers
 set scrolloff=10 " number of margin scroll lines
 set belloff=all " disable bell
+set relativenumber
+set autochdir
 
 " search and replace
 set hlsearch " highlights all search matches
@@ -77,11 +78,5 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
-"set colorcolumn=85 " mark too long lines
-set relativenumber

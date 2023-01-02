@@ -23,7 +23,7 @@ barupdate() {
     BATLABEL=""
     BATIND=""
     BAT="charged"
-  elif [ "$BAT" -le "9" -a "$STATUS" == "Discharging" ]; then
+  elif [ "$BAT" -le "18" -a "$STATUS" == "Discharging" ]; then
     BATLABEL=""
     BATIND=""
     BAT="charge!"
@@ -51,6 +51,7 @@ startup() {
   networkd-dispatcher &
   start-pulseaudio-x11 &
   /usr/bin/nextcloud --background &
+  picom &
   dunst &
   eval $(gnome-keyring-daemon --start) # keyring
   export SSH_AUTH_SOCK # https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
@@ -69,8 +70,7 @@ startup() {
   xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 1 &
   xinput set-prop "$TOUCHPADID" "$DISABLE_WHILE_TYPING_PROP" 0 &
   #wallpaper
-  #~/.scripts/fehbg
-  xsetroot -solid "$(shuf -n 1 ~/.config/bgcolors)"
+  hsetroot -solid "$(shuf -n 1 ~/.config/bgcolors)"
   # set default sound card output
   sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:analog-stereo+input:analog-stereo
   # setup dwm bar
