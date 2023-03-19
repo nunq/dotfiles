@@ -43,5 +43,6 @@
 /home/nils/android-studio
 /home/nils/go
 /home/nils/QEMU
+/home/nils/photos
 *.img
 *.git/

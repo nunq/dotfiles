@@ -22,6 +22,7 @@
   aa = add -A
   au = add -u
   ap = add --patch
+  d = diff
   dm = diff main
   dma = diff master
   dni = diff --no-index

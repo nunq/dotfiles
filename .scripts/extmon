@@ -3,10 +3,12 @@
 # if audio doesn't work, try: pacmd list-cards
 
 switchaudio() {
-  case "$(echo -e "far\nnear" | dmenu -p "audio: what thunderbolt port are you using?")" in
+  case "$(echo -e "far\nnear\ndlink" | dmenu -p "audio: what thunderbolt port are you using?")" in
     far)
     sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo ;;
     near)
+    sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:hdmi-stereo+input:analog-stereo ;;
+    dlink)
     sudo -u nils pactl --server "unix:/run/user/1000/pulse/native" set-card-profile 0 output:hdmi-stereo+input:analog-stereo ;;
   esac
 }

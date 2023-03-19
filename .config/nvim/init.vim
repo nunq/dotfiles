@@ -45,6 +45,7 @@ set scrolloff=10 " number of margin scroll lines
 set belloff=all " disable bell
 set relativenumber
 set autochdir
+set colorcolumn=81 " mark too long lines
 
 " search and replace
 set hlsearch " highlights all search matches

@@ -1,0 +1,9 @@
+#!/bin/bash
+export DBUS_SESSION_BUS_ADDRESS=$(tr '\0' '\n' < /proc/$(pidof -s pulseaudio)/environ | grep "DBUS_SESSION_BUS_ADDRESS" | cut -d "=" -f 2-)
+
+STATUS=$(cat /sys/class/power_supply/BAT1/status)
+BAT=$(cat /sys/class/power_supply/BAT1/capacity)
+
+if [ "$BAT" -le "8" -a "$STATUS" == "Discharging" ]; then
+  notify-send --urgency=critical -t 15000 "your laptop is about to die" "battery level at $BAT%"
+fi
