@@ -1,0 +1,8 @@
+[Match]
+Name=wg-mullvad-AAAAAA
+
+[Network]
+DNSOverTLS=no
+# https://github.com/mullvad/dns-blocklists#malware-serving-website-combinations
+DNS=100.64.0.7
+Domains=~.

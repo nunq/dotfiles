@@ -56,7 +56,7 @@
 (toolbox-color-area no)
 (user-manual-online yes)
 (color-profile-policy convert)
-(layer-new-name "schrank")
+(layer-new-name "layer")
 (selection-feather-radius 36)
 (selection-border-style hard)
 (fill-options

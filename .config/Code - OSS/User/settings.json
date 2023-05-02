@@ -13,8 +13,6 @@
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "Fira Code",
     "editor.tabSize": 2,
-    "editor.fontSize": 16,
-    "window.zoomLevel": 1,
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontFamily": "Fira Code",
@@ -87,5 +85,8 @@
     "extensions.autoUpdate": false,
     "terminal.integrated.tabs.enabled": false,
     "workbench.colorTheme": "Monokai",
-    "editor.quickSuggestionsDelay": 100
+    "editor.quickSuggestionsDelay": 100,
+    "window.zoomLevel": 1,
+    "editor.fontSize": 15,
+    "telemetry.telemetryLevel": "off"
 }

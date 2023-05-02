@@ -33,8 +33,13 @@ barupdate() {
   else
     NETSTAT="no networks"
   fi
+  if mullvad status | grep -q '^Connected'; then
+    VPN="[vpn] "
+  else
+    VPN=""
+  fi
   # cursor setting is required bc this script gets called from cron
-  xsetroot -cursor_name left_ptr -name " $(date +%H:%M) | $(date +%a | tr '[A-Z]' '[a-z]') $(date +%d/%m/%Y) | $NETSTAT $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND "
+  xsetroot -cursor_name left_ptr -name " $VPN$(date +%H:%M) | $(date +%a | tr '[A-Z]' '[a-z]') $(date +%d/%m/%Y) | $NETSTAT $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND "
 }
 
 startup() {
@@ -54,17 +59,6 @@ startup() {
   redshift  &
   xautolock -time 15 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 1; systemctl suspend" -detectsleep -notify 25 -notifier "notify-send --urgency=critical -t 5000 'suspending in 20s'" &
   echo off > ~/.cache/dwmespresso.txt # see ~/.scripts/espresso
-  echo off > ~/.cache/nsynctoggle.txt #init dnd state
-  #enable touch to click & natural scrolling & enable touchpad while typing
-  TOUCHPADID=$(xinput list | grep -oP "Touchpad.*id=[0-9]*\S" | sed "s/.*id=//")
-  MOUSEID=$(xinput list | grep -oP "Logitech M280.*id=[0-9]*\S" | sed "s/.*id=//" | head -n 1) # mouse id
-  TOUCH_TO_CLICK_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Tapping Enabled \(.*?\)" | sed "s/.*Tapping Enabled (//" | sed "s/)//")
-  NAT_SCROLLING_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Natural Scrolling Enabled \(.*?\)" | sed "s/.*Natural Scrolling Enabled (//" | sed "s/)//")
-  DISABLE_WHILE_TYPING_PROP=$(xinput list-props $TOUCHPADID | grep -oP "Disable While Typing Enabled \(.*?\)" | sed "s/.*Disable While Typing Enabled (//" | sed "s/)//")
-  xinput set-prop "$MOUSEID" "$NAT_SCROLLING_PROP" 0 &
-  xinput set-prop "$TOUCHPADID" "$TOUCH_TO_CLICK_PROP" 1 &
-  xinput set-prop "$TOUCHPADID" "$NAT_SCROLLING_PROP" 1 &
-  xinput set-prop "$TOUCHPADID" "$DISABLE_WHILE_TYPING_PROP" 0 &
   #wallpaper
   hsetroot -solid "$(shuf -n 1 ~/.config/bgcolors)"
   # set default sound card output

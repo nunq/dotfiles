@@ -32,3 +32,5 @@
   co = checkout
   c = commit
   subup = submodule foreach git pull
+[http]
+	postBuffer = 25000000

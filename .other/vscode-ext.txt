@@ -1,0 +1,4 @@
+Gruntfuggly.todo-tree
+PKief.material-icon-theme
+James-Yu.latex-workshop
+vscodevim.vim
