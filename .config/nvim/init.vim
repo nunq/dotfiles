@@ -8,8 +8,8 @@ nnoremap <esc> :noh<return><esc> " clear out search highlighting
 nnoremap <M-d> <Nop>
 nnoremap <M-s> <Nop>
 map qq <Nop>
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 
 nnoremap <tab> % " make tab match braces, move faster
 vnoremap <tab> %

@@ -1,12 +1,10 @@
-nautilus
+thunar
 kitty
 evince
 eog
 geary
 firefox
-signal-desktop
 gimp
 minecraft
 tor-browser
-geogebra
 spotify

@@ -33,7 +33,7 @@ function main() {
   cow=$(echo -e " ____________________ \n< have a nice day :) >\n -------------------- \n        \   ^__^\n         \  (oo)\_______\n            (__)\       )\/\ \n                §§----w §\n                §§     §§")
   
   # paste (prev month) (paste (week numbers this month) (cat (this month cal header) (this month cal without header, date highlighted))) (next month)
-  datecal=$(paste -d ' ' <(cal -3 -w | cut -c 1-24) <(paste -d "" <(cal -w | cut -c 1-3) <(cat <(cal | head -n 1) <( cal -n 2 -w | cut -c 4-23 | sed 1d | sed "0,/$(date +%d | sed -r 's/^0(.)/\1/')/s/$(date +%d | sed 's/^0/ /')/></"))) <(cal -n 2 -w | cut -c 25-48) | sed 's/   Mo/WK Mo/g')
+  datecal=$(paste -d ' ' <(cal -3 -mw | cut -c 1-24) <(paste -d "" <(cal -mw | cut -c 1-3) <(cat <(cal -m | head -n 1) <( cal -n 2 -mw | cut -c 4-23 | sed 1d | sed "0,/$(date +%d | sed -r 's/^0(.)/\1/')/s/$(date +%d | sed 's/^0/ /')/></"))) <(cal -n 2 -mw | cut -c 25-48) | sed 's/   Mo/WK Mo/g')
 
   # hex 222222 so that the selected line doesnt jump out
   paste -d '|' <(echo "$datecal") ~/.cache/panelweathercached.txt <(echo "$cow") | sed 's/|/  |  /g;s/^/ /g;s/§/|/g' | cat <(printf '\n') - <(printf '\n') | dmenu -sb "#222222" -l 10

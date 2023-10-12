@@ -1,0 +1,3 @@
+# Rule for when switching to battery
+# https://superuser.com/questions/1417292/udev-rule-to-start-a-command-on-ac-battery-plug-unplug-event/1426287#1426287
+#SUBSYSTEM=="power_supply",ENV{POWER_SUPPLY_ONLINE}=="0",RUN+="/home/nils/.xsession barupdate"

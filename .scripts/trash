@@ -1,5 +1,0 @@
-#!/bin/bash
-TRASHDIR="/home/nils/.local/share/Trash/files/"
-for item in "$@"; do
-  mv -v $(readlink -fn "$item") "$TRASHDIR"
-done
