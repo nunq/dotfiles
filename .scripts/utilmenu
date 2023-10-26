@@ -8,12 +8,7 @@ case "$(echo -e "calculator\npass store\nemoji picker\nespresso [$esprstate]\nbl
   emoji\ picker) $HOME/.scripts/emojipicker ;;
   espresso\ \[$esprstate\]) $HOME/.scripts/espresso ;;
   bluetooth)
-    case "$(echo -e "connect\ndisconnect" | dmenu -p "do what?")" in
-      connect)
-        $HOME/.scripts/btmenu ;;
-      disconnect)
-        $HOME/.scripts/btmenu -d ;;
-    esac ;;
+    blueberry ;;
   monitors)
     case "$(echo -e "top extend\nright extend\nmirror this display\ndisconnect" | dmenu -p "do what?")" in
       top\ extend)

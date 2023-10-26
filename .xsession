@@ -50,6 +50,7 @@ startup() {
   #autostart
   clipmenud &
   ssh-agent &
+  blueberry-tray &
   networkd-dispatcher &
   start-pulseaudio-x11 &
   /usr/bin/nextcloud --background &

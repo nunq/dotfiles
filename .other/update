@@ -9,8 +9,8 @@ _COPY() {
     mkdir -p "$DST"
   fi
 
-  #echo "copying $SRC to $DST"
-  sudo cp --verbose --update --target-directory="$DST" $SRC
+  echo "copying $SRC --> $DST"
+  sudo cp --update --target-directory="$DST" $SRC
 }
 
 # /etc config
