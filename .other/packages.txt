@@ -1,5 +1,6 @@
 alsa-utils
 android-sdk-platform-tools
+ascii-image-converter
 auto-cpufreq
 base-devel
 bash
@@ -51,7 +52,6 @@ ghc
 gimp
 gimp-plugin-resynthesizer-git
 git
-git-filter-repo
 glibc
 gnome-keyring
 gnome-themes-extra
@@ -115,6 +115,7 @@ mdadm
 minecraft-launcher
 mons
 mpv
+mullvad-vpn-bin
 ncdu
 neovim
 networkd-dispatcher
@@ -141,7 +142,7 @@ picom
 pkgconf
 polkit-gnome
 postgresql
-powertop
+power-profiles-daemon
 procps-ng
 psmisc
 pugixml
@@ -177,8 +178,7 @@ thermald
 thunar
 thunar-archive-plugin
 thunar-volman
-tlp
-tor-browser
+torbrowser-launcher
 traceroute
 tracker3
 trash-cli
@@ -203,7 +203,6 @@ xdotool
 xf86-input-libinput
 xf86-input-wacom
 xf86-video-intel
-xfsprogs
 xorg-font-util
 xorg-fonts-encodings
 xorg-fonts-misc

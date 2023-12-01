@@ -37,7 +37,7 @@ _COPY ~/.other/etc/xdg/ /etc/xdg/picom.conf
 # xorg
 _COPY ~/.other/etc/X11/ /etc/X11/xorg.conf
 # tlp
-_COPY ~/.other/etc/ /etc/tlp.conf
+##_COPY ~/.other/etc/ /etc/tlp.conf
 # pacman
 _COPY ~/.other/etc/ /etc/pacman.conf
 _COPY ~/.other/etc/pacman.d/hooks/ /etc/pacman.d/hooks/100-systemd-boot.hook

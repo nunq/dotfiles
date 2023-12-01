@@ -35,11 +35,11 @@ barupdate() {
   else
     NETSTAT="no networks"
   fi
-  #if mullvad status | grep -q '^Connected'; then
-  #  VPN="[vpn] "
-  #else
-  VPN=""
-  #fi
+  if mullvad status | grep -q '^Connected'; then
+    VPN="[vpn] "
+  else
+    VPN=""
+  fi
   # cursor setting is required bc this script gets called from cron
   xsetroot -cursor_name left_ptr -name " $VPN$(date +%H:%M) | $(date +%a | tr '[A-Z]' '[a-z]') $(date +%d/%m/%Y) | $NETSTAT $VOLLABEL$VOLUME $BATLABEL$BAT$BATIND "
 }
