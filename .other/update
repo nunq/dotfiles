@@ -36,18 +36,19 @@ _COPY ~/.other/etc/systemd/system/ /etc/systemd/system/slock@nils.service
 _COPY ~/.other/etc/xdg/ /etc/xdg/picom.conf
 # xorg
 _COPY ~/.other/etc/X11/ /etc/X11/xorg.conf
-# tlp
-##_COPY ~/.other/etc/ /etc/tlp.conf
 # pacman
 _COPY ~/.other/etc/ /etc/pacman.conf
 _COPY ~/.other/etc/pacman.d/hooks/ /etc/pacman.d/hooks/100-systemd-boot.hook
 # networkd-dispatcher (update bar after connectivity changes)
 _COPY ~/.other/etc/networkd-dispatcher/no-carrier.d/ /etc/networkd-dispatcher/no-carrier.d/updatebar.sh
 _COPY ~/.other/etc/networkd-dispatcher/routable.d/ /etc/networkd-dispatcher/routable.d/updatebar.sh
-# mkinitcpio (btrfs binary in cpio image)
+# mkinitcpio
 _COPY ~/.other/etc/ /etc/mkinitcpio.conf
 # iptables
 _COPY ~/.other/etc/iptables/ /etc/iptables/ip*tables.rules
+# systemd sleep conf
+_COPY ~/.other/etc/systemd/ /etc/systemd/sleep.conf
+_COPY ~/.other/etc/systemd/ /etc/systemd/logind.conf
 
 #######
 

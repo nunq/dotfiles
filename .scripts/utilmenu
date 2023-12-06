@@ -1,12 +1,22 @@
 #!/bin/sh
 esprstate="$(cat ~/.cache/dwmespresso.txt)"
+cur_powerprof="$(powerprofilesctl get)"
 
-case "$(echo -e "calculator\npass store\nemoji picker\nespresso [$esprstate]\nbluetooth\nmonitors\n--------------\nlock screen\nsuspend\nreboot\nshutdown\n" | dmenu -i -p "utility menu:" -l 14 )" in
+case "$(echo -e "calculator\npass store\nemoji picker\nespresso [$esprstate]\npower profile [$cur_powerprof]\nbluetooth\nmonitors\n--------------\nlock screen\nsuspend\nreboot\nshutdown\n" | dmenu -i -p "utility menu:" -l 14 )" in
   calculator) kitty bc -l $HOME/.config/bcrc ;;
   #new\ wallpaper) $HOME/.scripts/wallpaper ;;
   pass\ store) $HOME/.scripts/passnosave ;;
   emoji\ picker) $HOME/.scripts/emojipicker ;;
   espresso\ \[$esprstate\]) $HOME/.scripts/espresso ;;
+  power\ profile\ \[$cur_powerprof\])
+    case "$(echo -e "power-saver\nbalanced\nperformance" | dmenu -p "switch to?")" in
+      power-saver)
+        powerprofilesctl set power-saver ;;
+      balanced)
+        powerprofilesctl set balanced ;;
+      performance)
+        powerprofilesctl set performance ;;
+    esac ;;
   bluetooth)
     blueberry ;;
   monitors)
@@ -37,7 +47,13 @@ case "$(echo -e "calculator\npass store\nemoji picker\nespresso [$esprstate]\nbl
         esac ;;
     esac ;;
   lock\ screen) exec slock ;;
-  suspend) exec systemctl suspend ;;
+  suspend)
+    [ ! -f "$HOME/.Xauthority" ] && notify-send --urgency=critical -t 10000 "aborting suspend because ~/.Xauthority is missing" && exit 1
+    if [ "$(xauth info | grep "Authority file" | awk '{print $3}')" != "$HOME/.Xauthority" ]; then
+      notify-send --urgency=critical -t 10000 "aborting suspend because xauth file is not ~/.Xauthority"
+      exit 1
+    fi
+    exec systemctl suspend-then-hibernate ;;
   reboot) exec systemctl reboot ;;
   shutdown) exec systemctl poweroff ;;
 esac

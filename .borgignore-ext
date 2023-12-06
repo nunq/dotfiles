@@ -5,9 +5,10 @@
 /home/nils/.local/share/Steam/
 /home/nils/.cache/
 /home/nils/.nosync/
-/home/nils/photos/
+/home/nils/Pictures/
 /var/cache/
 /var/lib/docker/
+/var/log/
 /sys
 /opt
 /proc

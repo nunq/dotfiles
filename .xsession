@@ -6,10 +6,10 @@ export PULSE_RUNTIME_PATH="/run/user/1000/pulse/"
 #top bar
 barupdate() {
   #vars
-  BAT=$(cat /sys/class/power_supply/BAT1/capacity)
+  BAT=$(cat /sys/class/power_supply/BAT0/capacity)
   ISONLINE=$(networkctl status -n 0 --no-pager | grep -oP '(?<=State: ).*?(?=$)')
   SINK=$(pacmd list-sinks | awk '/\* index:/{ print $3 }')
-  STATUS=$(cat /sys/class/power_supply/BAT1/status)
+  STATUS=$(cat /sys/class/power_supply/BAT0/status)
   VOLUME=$(pactl get-sink-volume "$SINK" | grep -oP "[0-9]{1,3}%" | head -n 1)
   BATIND=""
   BATLABEL="bat:"
@@ -52,15 +52,17 @@ startup() {
   ssh-agent &
   blueberry-tray &
   networkd-dispatcher &
+  /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & # polkit
   start-pulseaudio-x11 &
   /usr/bin/nextcloud --background &
   picom &
   dunst &
   eval $(gnome-keyring-daemon --start) # keyring
   export SSH_AUTH_SOCK # https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
-  xset s off #disable screensaver
+  xset -dpms # disable dpms
+  xset s off # disable screensaver
   redshift  &
-  xautolock -time 15 -corners ---- -cornersize 40 -locker "/usr/bin/pactl set-sink-mute 0 1; systemctl suspend" -detectsleep -notify 25 -notifier "notify-send --urgency=critical -t 5000 'suspending in 20s'" &
+  xautolock -time 10 -locker "/usr/bin/pactl set-sink-mute 0 1; systemctl suspend" -detectsleep -notify 25 -notifier "notify-send --urgency=critical -t 5000 'suspending in 20s'" &
   echo off > ~/.cache/dwmespresso.txt # see ~/.scripts/espresso
   #wallpaper
   hsetroot -solid "$(shuf -n 1 ~/.config/bgcolors)"

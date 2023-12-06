@@ -1,5 +1,6 @@
 #!/bin/sh
 # DOES NOT work reliably! pw can still be found elsewhere
+# passmenu is provided by the pass package
 passmenu > /dev/null 2>&1
 sleep 5
 clipdel -d "$(tail -n 1 /run/user/1000/clipmenu.*/line_cache | sed 's/^[0-9]* //gi')"
