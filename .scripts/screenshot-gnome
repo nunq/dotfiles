@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" == "area" ]; then
+  gnome-screenshot -a -f ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
+elif [ "$1" == "all" ]; then
+  gnome-screenshot -f ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
+fi

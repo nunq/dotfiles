@@ -1,6 +1,6 @@
 #!/bin/sh
     
-case "$(echo -e "new wallpaper\npass" | dmenu -i -p "utility menu:" -l 2 )" in
+case "$(echo -e "new wallpaper\npass" | rofi -dmenu -p "utility menu:" )" in
         new\ wallpaper) $HOME/.scripts/gnome-bg ;;
         pass) $HOME/.scripts/passnosave-gnome ;;
 esac

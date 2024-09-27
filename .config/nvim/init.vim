@@ -1,4 +1,4 @@
-colorscheme monokai-grey
+colorscheme kuroi
 
 " inspiration:
 " https://stevelosh.com/blog/2010/09/coming-home-to-vim/#s5-vim-s-feeling
@@ -38,7 +38,6 @@ set ruler " cursor position
 set title " sets window title
 set undolevels=100
 set history=500
-set background=dark
 set mouse=a " enable mouse in all modes
 set number " show line numbers
 set scrolloff=10 " number of margin scroll lines

@@ -1,5 +1,6 @@
 #!/bin/bash
 # without these cron, etc cant get pulseaudio volume, etc
+# TODO 2024-09: lost some changes due to git fuckup, but im on gnome anyways for now
 export DISPLAY=":0"
 export PULSE_RUNTIME_PATH="/run/user/1000/pulse/"
 
