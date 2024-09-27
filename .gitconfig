@@ -8,7 +8,7 @@
 	email = 46054695+nunq@users.noreply.github.com
 	signingkey = C93170521663B88D
 [commit]
-	gpgsign = true
+	gpgsign = false
 [diff]
 	tool = meld
 [difftool]
