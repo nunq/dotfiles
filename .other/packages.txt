@@ -1,3 +1,4 @@
+7zip
 acpi
 alsa-utils
 android-sdk-platform-tools
@@ -8,6 +9,7 @@ base
 base-devel
 bash-completion
 bc
+biber
 bind
 blueberry
 bluez
@@ -48,16 +50,17 @@ geary
 geckodriver
 gimp
 git
+git-lfs
 gnome-backgrounds
 gnome-boxes
 gnome-calculator
+gnome-calendar
 gnome-characters
 gnome-control-center
 gnome-disk-utility
 gnome-font-viewer
 gnome-keyring
 gnome-menus
-gnome-pass-search-provider-git
 gnome-power-manager
 gnome-screenshot
 gnome-settings-daemon
@@ -77,6 +80,7 @@ gst-plugins-bad
 gst-plugins-ugly
 gstreamer
 gstreamer-vaapi
+gum
 gvfs
 gvfs-afc
 gvfs-dnssd
@@ -87,7 +91,6 @@ gvfs-mtp
 gvfs-nfs
 gvfs-onedrive
 gvfs-smb
-gvfs-wsdd
 hsetroot
 htop
 hugo
@@ -109,6 +112,7 @@ jdk17-openjdk
 joplin-desktop
 jpegoptim
 jq
+jupyterlab
 kitty
 knot
 lensfun
@@ -143,10 +147,13 @@ mons
 mpv
 mullvad-vpn-bin
 nautilus
+nautilus-image-converter
+nautilus-python
 ncdu
 neovim
 networkd-dispatcher
 networkmanager
+networkmanager-openconnect
 nextcloud-client
 ngrep
 nm-connection-editor
@@ -156,10 +163,10 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
+openconnect
 openrct2
 optipng
 orca
-p7zip
 paperkey
 papirus-icon-theme
 pass
@@ -181,10 +188,12 @@ python-flask
 python-matplotlib
 python-pip
 python-poetry
+python-pympress
 python-pytest
+python-sqlalchemy
 python-tqdm
+python310
 redshift-minimal
-rofi
 rsync
 rygel
 screen
@@ -200,13 +209,16 @@ sshpass
 steam
 steghide
 strace
-surf
 sushi
 sysfsutils
 tcpdump
-teaftp
 terraform
+tesseract
+tesseract-data-deu
+tesseract-data-fra
+tesseract-data-hun
 texlive-basic
+texlive-bibtexextra
 texlive-bin
 texlive-binextra
 texlive-fontsextra
@@ -229,6 +241,7 @@ unrar
 unzip
 upower
 usbutils
+uv
 uwsgi
 webp-pixbuf-loader
 wget
@@ -236,6 +249,7 @@ whois
 wipe
 wireless_tools
 wl-clipboard
+wofi
 xautolock
 xclip
 xdg-user-dirs-gtk
@@ -272,3 +286,4 @@ yt-dlp
 zbar
 zenity
 zip
+zotero-bin

@@ -19,6 +19,7 @@ _COPY() {
 _COPY ~/.other/etc/systemd/ /etc/systemd/resolved.conf
 _COPY ~/.other/etc/systemd/network/ /etc/systemd/network/*
 _COPY ~/.other/etc/iwd/ /etc/iwd/main.conf
+_COPY ~/.other/etc/NetworkManager/conf.d/ /etc/NetworkManager/conf.d/*
 # systemd
 _COPY ~/.other/etc/systemd/ /etc/systemd/system.conf
 _COPY ~/.other/etc/systemd/ /etc/systemd/journald.conf
@@ -49,6 +50,8 @@ _COPY ~/.other/etc/iptables/ /etc/iptables/ip*tables.rules
 # systemd sleep conf
 _COPY ~/.other/etc/systemd/ /etc/systemd/sleep.conf
 _COPY ~/.other/etc/systemd/ /etc/systemd/logind.conf
+# /usr/local/bin
+_COPY ~/.other/usr/local/bin/ /usr/local/bin/wofi
 
 #######
 

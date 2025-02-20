@@ -1,13 +1,12 @@
 {
-    /* disable all suggestions, so annoying omg */
-    /*
-    "editor.parameterHints.enabled": false,
-    "editor.quickSuggestions": false,
-    "editor.inlineSuggest.enabled": false,
-    "editor.suggestOnTriggerCharacters": false,
-    "editor.acceptSuggestionOnEnter": "off",
-    */
-    /**/
+    "editor.parameterHints.enabled": true,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    //"editor.acceptSuggestionOnEnter": "off",
     "window.menuBarVisibility": "toggle",
     "explorer.confirmDelete": false,
     "files.autoSave": "afterDelay",
@@ -15,7 +14,7 @@
     "editor.tabSize": 2,
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.fontSize": 16,
-    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontFamily": "\"Fira Code\"",
     "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "workbench.enableExperiments": false,
@@ -24,7 +23,6 @@
     "explorer.confirmDragAndDrop": false,
     "vim.vimrc.enable": true,
     "vim.disableExtension": true,
-    "editor.suggestSelection": "first",
     "latex-workshop.view.pdf.viewer": "tab",
     "todo-tree.highlights.defaultHighlight": {
         "icon": "alert",
@@ -83,10 +81,30 @@
         "**/.factorypath": true
     },
     "extensions.autoUpdate": false,
-    "terminal.integrated.tabs.enabled": false,
-    "workbench.colorTheme": "Monokai",
-    "editor.quickSuggestionsDelay": 100,
+    "workbench.colorTheme": "Monokai Dimmed",
     "window.zoomLevel": 1,
     "editor.fontSize": 15,
-    "telemetry.telemetryLevel": "off"
+    "telemetry.telemetryLevel": "off",
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*"
+    },
+    "notebook.output.scrolling": true,
+    "json.schemas": [
+        
+    ],
+    "explorer.confirmPasteNative": false,
+    "jupyter.askForKernelRestart": false,
+    "window.titleBarStyle": "custom",
+    "terminal.integrated.enableMultiLinePasteWarning": false
 }

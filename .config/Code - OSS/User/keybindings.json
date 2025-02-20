@@ -11,5 +11,11 @@
   {
     "key": "alt+y",
     "command": "toggleVim"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "-editor.action.clipboardPasteAction"
   }
 ]
+// https://github.com/microsoft/vscode/issues/238609#issuecomment-2611147382
+// 2025-01-29 ctrl+v as paste fix

@@ -16,6 +16,7 @@ case $1 in
     sudo systemctl disable slock@nils.service
     echo -e "\nplease reboot!" ;;
   dwm)
+    yay -S dunst
     sudo systemctl enable getty@tty2.service
     sudo systemctl disable gdm.service
     sudo systemctl enable xdm-simple.service

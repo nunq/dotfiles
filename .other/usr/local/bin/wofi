@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+set -x
+
+ARGS="$@"
+SCHEME="$(gsettings get org.gnome.desktop.interface color-scheme)"
+if [[ $SCHEME =~ 'dark' ]]; then
+	/usr/bin/wofi --gtk-dark "$ARGS"
+else
+	/usr/bin/wofi "$ARGS"
+fi
