@@ -33,7 +33,9 @@
   c = commit
   subup = submodule foreach git pull
 [http]
-	postBuffer = 25000000
+	postBuffer = 524288000
+	lowSpeedLimit = 0
+	lowSpeedTime = 999999
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

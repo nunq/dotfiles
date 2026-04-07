@@ -33,8 +33,8 @@ _COPY ~/.other/etc/udev/rules.d/ /etc/udev/rules.d/*
 _COPY ~/.other/etc/security/ /etc/security/pam_env.conf
 # slock systemd service
 _COPY ~/.other/etc/systemd/system/ /etc/systemd/system/slock@nils.service
-# picom compositor
-_COPY ~/.other/etc/xdg/ /etc/xdg/picom.conf
+## picom compositor
+##_COPY ~/.other/etc/xdg/ /etc/xdg/picom.conf
 # xorg
 _COPY ~/.other/etc/X11/ /etc/X11/xorg.conf
 # pacman
@@ -45,8 +45,8 @@ _COPY ~/.other/etc/networkd-dispatcher/no-carrier.d/ /etc/networkd-dispatcher/no
 _COPY ~/.other/etc/networkd-dispatcher/routable.d/ /etc/networkd-dispatcher/routable.d/updatebar.sh
 # mkinitcpio
 _COPY ~/.other/etc/ /etc/mkinitcpio.conf
-# iptables
-_COPY ~/.other/etc/iptables/ /etc/iptables/ip*tables.rules
+# nftables
+_COPY ~/.other/etc/nftables.conf /etc/nftables.conf
 # systemd sleep conf
 _COPY ~/.other/etc/systemd/ /etc/systemd/sleep.conf
 _COPY ~/.other/etc/systemd/ /etc/systemd/logind.conf

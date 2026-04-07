@@ -11,9 +11,7 @@
     "explorer.confirmDelete": false,
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "Fira Code",
-    "editor.tabSize": 2,
     "terminal.integrated.copyOnSelection": true,
-    "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontFamily": "\"Fira Code\"",
     "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
@@ -32,6 +30,7 @@
         "opacity": 50
     },
     "todo-tree.highlights.customHighlight": {
+
         "TODO": {
             "icon": "check",
             "type": "line",
@@ -80,10 +79,8 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "extensions.autoUpdate": false,
     "workbench.colorTheme": "Monokai Dimmed",
     "window.zoomLevel": 1,
-    "editor.fontSize": 15,
     "telemetry.telemetryLevel": "off",
     "explorer.fileNesting.patterns": {
         "*.ts": "${capture}.js",
@@ -100,11 +97,9 @@
         "*.s3db": "${capture}.${extname}-*"
     },
     "notebook.output.scrolling": true,
-    "json.schemas": [
-        
-    ],
     "explorer.confirmPasteNative": false,
     "jupyter.askForKernelRestart": false,
     "window.titleBarStyle": "custom",
-    "terminal.integrated.enableMultiLinePasteWarning": false
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "git.confirmSync": false
 }

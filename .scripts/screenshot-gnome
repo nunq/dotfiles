@@ -1,6 +1,9 @@
 #!/bin/bash
+# update for gnome v49 because the gnome devs,
+# in their infinite wisdom, deprecated gnome-screenshot
+# their new native screenshot tool is dogshit tho
 if [ "$1" == "area" ]; then
-  gnome-screenshot -a -f ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
+  gnome-screenshot -a -f ~/Downloads/screen_$(date "+%Y-%m-%d_%H-%M-%S").png
 elif [ "$1" == "all" ]; then
-  gnome-screenshot -f ~/Downloads/screen_$(date "+%Y-%m-%d_%H:%M:%S").png
+  gnome-screenshot -f ~/Downloads/screen_$(date "+%Y-%m-%d_%H-%M-%S").png
 fi

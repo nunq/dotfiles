@@ -1,7 +1,9 @@
 #!/bin/sh
-    
-case "$(echo -e "calculator\npassword store" | wofi -p "utility menu:" )" in
-        #new\ wallpaper) $HOME/.scripts/gnome-bg ;;
-        calculator) kitty bc -l $HOME/.config/bcrc ;;
-        password\ store) $HOME/.scripts/passnosave-gnome ;;
-esac
+# direct link to pass
+exec $HOME/.scripts/passnosave-gnome
+
+#case "$(echo -e "calculator\npassword store" | wofi -p "utility menu:" )" in
+#        #new\ wallpaper) $HOME/.scripts/gnome-bg ;;
+#        calculator) kitty bc -l $HOME/.config/bcrc ;;
+#        password\ store) $HOME/.scripts/passnosave-gnome ;;
+#esac

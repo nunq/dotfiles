@@ -11,7 +11,8 @@ DNSOverTLS=no
 # i dont expect hotspots to support dnssec
 DNSSEC=no
 # reset options set in global systemd-resolved conf
-DNS=
+DNS=172.18.0.1
+# TODO or leave DNS= empty ???
 Domains=~.
 
 [DHCPv4]

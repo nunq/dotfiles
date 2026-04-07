@@ -41,13 +41,37 @@
 /home/nils/Android*
 /home/nils/Documents/backups/servers/
 /home/nils/Downloads/
-/home/nils/Music
-/home/nils/QEMU
 /home/nils/Videos
 /home/nils/android-studio
 /home/nils/go
 /home/nils/Pictures
 /home/nils/snap
-/home/nils/BA/BA*/.cache/
-/home/nils/BA-new/
-/home/nils/BA_OCR_EVAL/*/.venv/
+
+# vscode cache
+/home/nils/.config/Code - OSS/User/History/
+/home/nils/.config/Code - OSS/Cache/Cache_Data/
+# cursor
+/home/nils/.config/Cursor/CachedData/
+/home/nils/.config/Cursor/History/
+
+# BA
+/home/nils/BA_*/*/.cache/
+/home/nils/BA_*/.cache/
+/home/nils/BA_*/*/.venv-linux/
+/home/nils/BA_*/*/.venv-windows/
+/home/nils/BA_*/*/.venv/
+/home/nils/BA_*/*/venv/
+/home/nils/BA_*/venv/
+
+/home/nils/BA_APP/*/*.bin
+/home/nils/BA_APP/*/dist/
+
+*.safetensors
+*.ckpt
+*.TIF
+*.tif
+*.tiff
+
+/home/nils/check24/
+/home/nils/BA_HTR_trocr/trocr-finetuned-diary/
+

@@ -22,6 +22,8 @@ case $1 in
     sudo systemctl enable xdm-simple.service
     sudo systemctl enable slock@nils.service
     echo -e "\nplease reboot!" ;;
+    # needed: picom blueberry, bunch of xorg stuff. clipmenu
+    # clipnotify hsetroot light mons redshift-minimal
   *)
     echo "switch to what? ./gnome-dwm-switching.sh (gnome|dwm)"
     exit 1;;
